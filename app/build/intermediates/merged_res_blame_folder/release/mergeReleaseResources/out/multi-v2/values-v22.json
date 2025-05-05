@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "rocks.wiedemann.motqot.app-mergeReleaseResources-46:/values-v22/values-v22.xml",
+            "map": [
+                {
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\88caf39869a9e3d52f21a0f0ee5e5f73\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
+                    "from": {
+                        "startLines": "2,3,4,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,130,217,487",
+                        "endLines": "2,3,8,13",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "125,212,482,764"
+                    }
+                }
+            ]
+        }
+    ]
+}

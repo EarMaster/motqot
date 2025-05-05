@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.9.2">
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.ROOT)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            timePref?.summary = String.format(&quot;%02d:%02d&quot;, hour, minute)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\SettingsActivity.kt"
+            line="101"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.ROOT)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="            timePref?.summary = String.format(&quot;%02d:%02d&quot;, hour, minute)"
+        errorLine2="                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\SettingsActivity.kt"
+            line="101"
+            column="33"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.ROOT)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                        String.format(&quot;%02d:%02d&quot;, selectedHour, selectedMinute)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\SettingsActivity.kt"
+            line="130"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="DefaultLocale"
+        severity="Warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
+        category="Correctness"
+        priority="6"
+        summary="Implied default locale in case conversion"
+        explanation="Calling `String#toLowerCase()` or `#toUpperCase()` **without specifying an explicit locale** is a common source of bugs. The reason for that is that those methods will use the current locale on the user&apos;s device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for `i` is **not** `I`.&#xA;&#xA;If you want the methods to just perform ASCII replacement, for example to convert an enum name, call `String#toUpperCase(Locale.ROOT)` instead. If you really want to use the current locale, call `String#toUpperCase(Locale.getDefault())` instead."
+        url="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        urls="https://developer.android.com/reference/java/util/Locale.html#default_locale"
+        errorLine1="                        String.format(&quot;%02d:%02d&quot;, selectedHour, selectedMinute)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\SettingsActivity.kt"
+            line="130"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `font` is only used in API level 26 and higher (current min is 23)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).&#xA;&#xA;This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.&#xA;&#xA;Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="  android:font=&quot;@font/roboto_regular&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\font\roboto.xml"
+            line="5"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `fontStyle` is only used in API level 26 and higher (current min is 23)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).&#xA;&#xA;This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.&#xA;&#xA;Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="  android:fontStyle=&quot;normal&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\font\roboto.xml"
+            line="6"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        severity="Warning"
+        message="Attribute `fontWeight` is only used in API level 26 and higher (current min is 23)"
+        category="Correctness"
+        priority="6"
+        summary="Attribute unused on older versions"
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).&#xA;&#xA;This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.&#xA;&#xA;Note: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `&lt;tag>` element in layouts introduced in API 21."
+        errorLine1="  android:fontWeight=&quot;400&quot;"
+        errorLine2="  ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\font\roboto.xml"
+            line="7"
+            column="3"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.core:core-ktx:1.12.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="37"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.appcompat:appcompat:1.6.1&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="38"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;com.google.android.material:material:1.11.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="39"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.constraintlayout:constraintlayout:2.1.4&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="40"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.7.0 is available: 2.8.7"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="43"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.7.0 is available: 2.8.7"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.lifecycle:lifecycle-livedata-ktx:2.7.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="44"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="52"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.10.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation &apos;androidx.work:work-runtime-ktx:2.9.0&apos;"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="55"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    androidTestImplementation &apos;androidx.test.ext:junit:1.1.5&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="62"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    androidTestImplementation &apos;androidx.test.espresso:espresso-core:3.5.1&apos;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\build.gradle"
+            line="63"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1905 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M211.962,391.924C211.962,391.924 0.896,-0.001 0.896,-0.001L0.662,-0.001L0.666,-0.041L0.734,-0.063L0.734,-0.322C0.733,-0.343 0.727,-0.362 0.716,-0.379C0.705,-0.396 0.69,-0.407 0.672,-0.414C0.653,-0.421 0.632,-0.421 0.609,-0.414C0.586,-0.407 0.562,-0.39 0.537,-0.363L0.537,-0.063L0.618,-0.044L0.613,-0L0.369,-0L0.375,-0.041L0.447,-0.063L0.447,-0.322C0.447,-0.341 0.442,-0.358 0.431,-0.375C0.42,-0.392 0.406,-0.404 0.387,-0.412C0.368,-0.419 0.347,-0.421 0.323,-0.416C0.298,-0.411 0.272,-0.396 0.245,-0.371L0.245,-0.063L0.323,-0.044L0.317,-0L0.064,-0L0.069,-0.041L0.152,-0.063L0.152,-0.371C0.155,-0.379 0.161,-0.388 0.171,-0.399C0.18,-0.41 0.191,-0.42 0.202,-0.429C0.213,-0.438 0.222,-0.446 0.231,-0.453C0.24,-0.46 0.244,-0.463 0.244,-0.463L0.237,-0.407L0.242,-0.407C0.245,-0.414 0.252,-0.422 0.265,-0.433C0.277,-0.444 0.292,-0.454 0.31,-0.464C0.327,-0.474 0.346,-0.482 0.367,-0.489C0.388,-0.495 0.408,-0.497 0.429,-0.494C0.449,-0.491 0.468,-0.483 0.486,-0.469C0.503,-0.455 0.517,-0.433 0.528,-0.403L0.535,-0.403C0.538,-0.41 0.546,-0.42 0.561,-0.433C0.576,-0.445 0.593,-0.456 0.614,-0.467C0.634,-0.477 0.656,-0.484 0.68,-0.489C0.703,-0.494 0.725,-0.492 0.747,-0.485C0.768,-0.478 0.785,-0.462 0.8,-0.439C0.815,-0.416 0.824,-0.381 0.827,-0.335L0.827,-0.064L0.903,-0.044L0.896,-0.001ZM0.117,-0.401C0.11,-0.378 0.102,-0.361 0.093,-0.35C0.084,-0.339 0.076,-0.331 0.069,-0.328C0.06,-0.324 0.052,-0.323 0.044,-0.326C0.041,-0.327 0.038,-0.329 0.035,-0.331C0.032,-0.333 0.029,-0.336 0.027,-0.34C0.024,-0.349 0.022,-0.359 0.023,-0.368C0.024,-0.388 0.036,-0.406 0.058,-0.423C0.08,-0.44 0.106,-0.453 0.136,-0.462C0.139,-0.463 0.144,-0.464 0.15,-0.466C0.156,-0.468 0.162,-0.47 0.169,-0.472C0.176,-0.474 0.182,-0.476 0.188,-0.478C0.194,-0.479 0.199,-0.48 0.202,-0.481C0.195,-0.476 0.187,-0.471 0.178,-0.465C0.169,-0.459 0.161,-0.452 0.153,-0.446C0.144,-0.439 0.137,-0.431 0.131,-0.424C0.124,-0.416 0.12,-0.408 0.117,-0.401Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="14"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (2146 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M486.852,391.924C486.852,391.924 0.086,-0.317 0.086,-0.317C0.083,-0.318 0.079,-0.319 0.076,-0.321C0.073,-0.322 0.07,-0.325 0.068,-0.329C0.064,-0.335 0.061,-0.344 0.06,-0.356C0.058,-0.375 0.067,-0.395 0.087,-0.415C0.106,-0.434 0.131,-0.451 0.16,-0.464C0.163,-0.465 0.167,-0.467 0.173,-0.47C0.179,-0.473 0.185,-0.475 0.192,-0.478C0.198,-0.481 0.204,-0.483 0.21,-0.486C0.215,-0.488 0.22,-0.49 0.223,-0.491C0.216,-0.486 0.209,-0.479 0.201,-0.472C0.193,-0.465 0.186,-0.457 0.179,-0.449C0.171,-0.441 0.165,-0.433 0.16,-0.425C0.154,-0.416 0.15,-0.408 0.149,-0.401C0.144,-0.376 0.139,-0.358 0.132,-0.347C0.125,-0.335 0.118,-0.327 0.111,-0.322C0.103,-0.317 0.095,-0.315 0.086,-0.317ZM0.296,-0.494C0.315,-0.492 0.335,-0.487 0.358,-0.478C0.381,-0.469 0.402,-0.456 0.421,-0.437C0.44,-0.418 0.456,-0.392 0.47,-0.361C0.483,-0.329 0.489,-0.289 0.489,-0.241C0.489,-0.196 0.482,-0.157 0.469,-0.125C0.455,-0.092 0.437,-0.066 0.415,-0.045C0.393,-0.024 0.368,-0.008 0.341,0.002C0.314,0.011 0.286,0.016 0.259,0.016C0.213,0.016 0.175,0.007 0.146,-0.011C0.117,-0.028 0.094,-0.05 0.077,-0.076C0.06,-0.101 0.049,-0.128 0.043,-0.157C0.036,-0.186 0.033,-0.211 0.033,-0.233C0.033,-0.246 0.034,-0.258 0.035,-0.27C0.036,-0.281 0.038,-0.293 0.041,-0.304C0.042,-0.301 0.045,-0.297 0.05,-0.292C0.054,-0.286 0.06,-0.281 0.068,-0.276C0.075,-0.271 0.084,-0.267 0.095,-0.265C0.106,-0.262 0.118,-0.263 0.132,-0.267C0.132,-0.256 0.133,-0.243 0.134,-0.228C0.135,-0.213 0.136,-0.199 0.139,-0.187C0.14,-0.18 0.143,-0.169 0.147,-0.153C0.151,-0.137 0.158,-0.121 0.168,-0.104C0.178,-0.087 0.192,-0.071 0.21,-0.058C0.227,-0.045 0.25,-0.038 0.278,-0.037C0.287,-0.037 0.297,-0.039 0.31,-0.044C0.323,-0.049 0.335,-0.057 0.347,-0.069C0.359,-0.081 0.369,-0.097 0.378,-0.118C0.386,-0.139 0.391,-0.165 0.392,-0.196C0.392,-0.201 0.392,-0.211 0.391,-0.226C0.39,-0.241 0.387,-0.258 0.383,-0.277C0.379,-0.296 0.373,-0.316 0.366,-0.337C0.359,-0.358 0.349,-0.376 0.337,-0.392C0.324,-0.408 0.309,-0.42 0.291,-0.429C0.272,-0.437 0.25,-0.439 0.224,-0.434C0.227,-0.437 0.231,-0.442 0.237,-0.449C0.242,-0.455 0.249,-0.461 0.256,-0.468C0.263,-0.474 0.27,-0.48 0.277,-0.485C0.284,-0.49 0.291,-0.493 0.296,-0.494Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="18"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1180 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M640.32,391.924C640.32,391.924 0.198,-0.179 0.198,-0.179C0.198,-0.138 0.204,-0.11 0.216,-0.094C0.219,-0.09 0.223,-0.087 0.227,-0.084C0.231,-0.081 0.236,-0.079 0.241,-0.077C0.234,-0.066 0.225,-0.054 0.215,-0.042C0.204,-0.029 0.192,-0.017 0.178,-0.006L0.169,-0C0.158,-0.005 0.147,-0.012 0.136,-0.023C0.125,-0.034 0.117,-0.05 0.111,-0.071C0.108,-0.082 0.106,-0.093 0.105,-0.106C0.103,-0.118 0.103,-0.132 0.103,-0.147L0.105,-0.434L0.035,-0.434L0.035,-0.464C0.081,-0.499 0.126,-0.545 0.171,-0.602L0.2,-0.602L0.2,-0.481L0.356,-0.481L0.351,-0.433L0.199,-0.433L0.198,-0.179ZM0.294,-0.077C0.299,-0.101 0.306,-0.119 0.313,-0.131C0.32,-0.142 0.328,-0.15 0.335,-0.154C0.343,-0.159 0.351,-0.16 0.36,-0.159C0.363,-0.158 0.367,-0.157 0.37,-0.155C0.373,-0.153 0.376,-0.15 0.378,-0.147C0.381,-0.14 0.384,-0.131 0.385,-0.12C0.386,-0.101 0.376,-0.081 0.356,-0.061C0.334,-0.041 0.309,-0.025 0.282,-0.014C0.279,-0.013 0.274,-0.011 0.268,-0.009C0.262,-0.006 0.256,-0.004 0.25,-0.001C0.243,0.002 0.237,0.004 0.231,0.006C0.225,0.008 0.221,0.009 0.218,0.01C0.225,0.005 0.232,-0 0.24,-0.008C0.248,-0.015 0.256,-0.022 0.264,-0.03C0.271,-0.037 0.278,-0.045 0.283,-0.054C0.288,-0.062 0.292,-0.07 0.294,-0.077Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="22"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1808 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M275.352,590.019C275.352,590.019 0.531,0.204 0.531,0.204L0.269,0.204L0.274,0.161L0.357,0.141L0.357,-0.362C0.349,-0.378 0.34,-0.391 0.33,-0.401C0.319,-0.41 0.309,-0.418 0.299,-0.423C0.288,-0.428 0.278,-0.432 0.269,-0.435C0.26,-0.437 0.252,-0.438 0.246,-0.438C0.223,-0.439 0.204,-0.433 0.189,-0.421C0.174,-0.408 0.162,-0.393 0.153,-0.374C0.143,-0.355 0.137,-0.335 0.133,-0.314C0.129,-0.293 0.127,-0.274 0.127,-0.258C0.127,-0.244 0.128,-0.228 0.13,-0.211C0.131,-0.194 0.135,-0.176 0.14,-0.159C0.145,-0.142 0.151,-0.125 0.16,-0.11C0.168,-0.095 0.179,-0.082 0.193,-0.072C0.18,-0.065 0.167,-0.058 0.152,-0.052C0.136,-0.046 0.119,-0.041 0.1,-0.038C0.098,-0.037 0.095,-0.037 0.09,-0.037C0.079,-0.049 0.069,-0.063 0.062,-0.078C0.055,-0.093 0.049,-0.109 0.044,-0.126C0.039,-0.142 0.036,-0.159 0.034,-0.176C0.032,-0.193 0.031,-0.209 0.031,-0.224C0.032,-0.265 0.039,-0.3 0.053,-0.33C0.066,-0.359 0.082,-0.384 0.1,-0.404C0.117,-0.423 0.134,-0.439 0.151,-0.45C0.168,-0.46 0.18,-0.468 0.187,-0.471C0.21,-0.482 0.232,-0.489 0.253,-0.491C0.274,-0.492 0.292,-0.492 0.308,-0.489C0.324,-0.486 0.337,-0.482 0.348,-0.477C0.359,-0.472 0.365,-0.468 0.368,-0.467L0.433,-0.488L0.449,-0.487L0.449,0.141L0.537,0.159L0.531,0.204ZM0.236,-0.041C0.252,-0.06 0.266,-0.072 0.278,-0.079C0.29,-0.085 0.3,-0.088 0.308,-0.089C0.317,-0.09 0.325,-0.087 0.332,-0.081C0.335,-0.08 0.337,-0.077 0.339,-0.074C0.341,-0.071 0.342,-0.067 0.342,-0.062C0.343,-0.058 0.342,-0.054 0.341,-0.05C0.34,-0.045 0.338,-0.04 0.336,-0.035C0.329,-0.018 0.311,-0.005 0.283,0.003C0.256,0.01 0.226,0.012 0.195,0.009C0.192,0.009 0.187,0.009 0.181,0.008C0.174,0.007 0.147,0.004 0.141,0.003C0.135,0.002 0.131,0.002 0.128,0.001C0.136,-0 0.145,-0.002 0.156,-0.005C0.167,-0.007 0.177,-0.01 0.187,-0.013C0.197,-0.016 0.206,-0.02 0.215,-0.025C0.224,-0.03 0.231,-0.035 0.236,-0.041Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="26"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (2146 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M441.756,590.019C441.756,590.019 0.086,-0.317 0.086,-0.317C0.083,-0.318 0.079,-0.319 0.076,-0.321C0.073,-0.322 0.07,-0.325 0.068,-0.329C0.064,-0.335 0.061,-0.344 0.06,-0.356C0.058,-0.375 0.067,-0.395 0.087,-0.415C0.106,-0.434 0.131,-0.451 0.16,-0.464C0.163,-0.465 0.167,-0.467 0.173,-0.47C0.179,-0.473 0.185,-0.475 0.192,-0.478C0.198,-0.481 0.204,-0.483 0.21,-0.486C0.215,-0.488 0.22,-0.49 0.223,-0.491C0.216,-0.486 0.209,-0.479 0.201,-0.472C0.193,-0.465 0.186,-0.457 0.179,-0.449C0.171,-0.441 0.165,-0.433 0.16,-0.425C0.154,-0.416 0.15,-0.408 0.149,-0.401C0.144,-0.376 0.139,-0.358 0.132,-0.347C0.125,-0.335 0.118,-0.327 0.111,-0.322C0.103,-0.317 0.095,-0.315 0.086,-0.317ZM0.296,-0.494C0.315,-0.492 0.335,-0.487 0.358,-0.478C0.381,-0.469 0.402,-0.456 0.421,-0.437C0.44,-0.418 0.456,-0.392 0.47,-0.361C0.483,-0.329 0.489,-0.289 0.489,-0.241C0.489,-0.196 0.482,-0.157 0.469,-0.125C0.455,-0.092 0.437,-0.066 0.415,-0.045C0.393,-0.024 0.368,-0.008 0.341,0.002C0.314,0.011 0.286,0.016 0.259,0.016C0.213,0.016 0.175,0.007 0.146,-0.011C0.117,-0.028 0.094,-0.05 0.077,-0.076C0.06,-0.101 0.049,-0.128 0.043,-0.157C0.036,-0.186 0.033,-0.211 0.033,-0.233C0.033,-0.246 0.034,-0.258 0.035,-0.27C0.036,-0.281 0.038,-0.293 0.041,-0.304C0.042,-0.301 0.045,-0.297 0.05,-0.292C0.054,-0.286 0.06,-0.281 0.068,-0.276C0.075,-0.271 0.084,-0.267 0.095,-0.265C0.106,-0.262 0.118,-0.263 0.132,-0.267C0.132,-0.256 0.133,-0.243 0.134,-0.228C0.135,-0.213 0.136,-0.199 0.139,-0.187C0.14,-0.18 0.143,-0.169 0.147,-0.153C0.151,-0.137 0.158,-0.121 0.168,-0.104C0.178,-0.087 0.192,-0.071 0.21,-0.058C0.227,-0.045 0.25,-0.038 0.278,-0.037C0.287,-0.037 0.297,-0.039 0.31,-0.044C0.323,-0.049 0.335,-0.057 0.347,-0.069C0.359,-0.081 0.369,-0.097 0.378,-0.118C0.386,-0.139 0.391,-0.165 0.392,-0.196C0.392,-0.201 0.392,-0.211 0.391,-0.226C0.39,-0.241 0.387,-0.258 0.383,-0.277C0.379,-0.296 0.373,-0.316 0.366,-0.337C0.359,-0.358 0.349,-0.376 0.337,-0.392C0.324,-0.408 0.309,-0.42 0.291,-0.429C0.272,-0.437 0.25,-0.439 0.224,-0.434C0.227,-0.437 0.231,-0.442 0.237,-0.449C0.242,-0.455 0.249,-0.461 0.256,-0.468C0.263,-0.474 0.27,-0.48 0.277,-0.485C0.284,-0.49 0.291,-0.493 0.296,-0.494Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="30"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1182 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M595.224,590.019C595.224,590.019 0.198,-0.179 0.198,-0.179C0.198,-0.138 0.204,-0.11 0.216,-0.094C0.219,-0.09 0.223,-0.087 0.227,-0.084C0.231,-0.081 0.236,-0.079 0.241,-0.077C0.234,-0.066 0.225,-0.054 0.215,-0.042C0.204,-0.029 0.192,-0.017 0.178,-0.006L0.169,-0C0.158,-0.005 0.147,-0.012 0.136,-0.023C0.125,-0.034 0.117,-0.05 0.111,-0.071C0.108,-0.082 0.106,-0.093 0.105,-0.106C0.103,-0.118 0.103,-0.132 0.103,-0.147L0.105,-0.434L0.035,-0.434L0.035,-0.464C0.081,-0.499 0.126,-0.545 0.171,-0.602L0.2,-0.602L0.2,-0.481L0.356,-0.481L0.351,-0.433L0.199,-0.433L0.198,-0.179ZM0.294,-0.077C0.299,-0.101 0.306,-0.119 0.313,-0.131C0.32,-0.142 0.328,-0.15 0.335,-0.154C0.343,-0.159 0.351,-0.16 0.36,-0.159C0.363,-0.158 0.367,-0.157 0.37,-0.155C0.373,-0.153 0.376,-0.15 0.378,-0.147C0.381,-0.14 0.384,-0.131 0.385,-0.12C0.386,-0.101 0.376,-0.081 0.356,-0.061C0.334,-0.041 0.309,-0.025 0.282,-0.014C0.279,-0.013 0.274,-0.011 0.268,-0.009C0.262,-0.006 0.256,-0.004 0.25,-0.001C0.243,0.002 0.237,0.004 0.231,0.006C0.225,0.008 0.221,0.009 0.218,0.01C0.225,0.005 0.232,-0 0.24,-0.008C0.248,-0.015 0.256,-0.022 0.264,-0.03C0.271,-0.037 0.278,-0.045 0.283,-0.054C0.288,-0.062 0.292,-0.07 0.294,-0.077Z&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="34"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1365 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="   android:pathData=&quot;M28.4533,360.369C28.4533,360.369 0,-23.416 1.833,-24.249C3.833,-24.916 6,-25.416L-1.25,-25.416L21.75,-30.916L-2.5,-28.916C-2.667,-31.083 5.75,-34.666 22.75,-39.666C39.583,-44.833 53.833,-41.749 65.5,-30.416L71,-22.666L72.75,-17.666C66.75,4.168 60,10.168 52.5,0.334C44.833,-9.666 27.25,-15.749 -0.25,-17.916L14,-22.666L0,-23.416ZM-105.75,-19.916C-101.583,-21.082 -98.5,-21.666 -96.5,-21.666L-68.5,-20.166L-85,-18.416L-72.5,-18.666C-84.667,-17.666 -94.333,-12.582 -101.5,-3.416C-107.667,-8.582 -109.083,-14.082 -105.75,-19.916M-26.25,-7.916L-23.75,1.334C-23.417,-1.832 -22.833,-4.499 -22,-6.666L-21,-5.916L-16,11.084L-17,-6.166C-12,0.334 -8.333,7.418 -6,15.084C-2.167,27.418 -3.167,38.917 -9,49.584C-18,53.084 -27.167,53.917 -36.5,52.084C-47.667,49.751 -55.75,44.001 -60.75,34.834C-54.583,19.334 -46.333,5.168 -36,-7.666L-26.25,-7.916ZM-15,-62.666L-16,-49.166C-17.167,-45.499 -19.167,-41.249 -22,-36.416L-20.75,-52.166L-24,-36.666L-28.5,-36.666C-26.667,-42.333 -27.583,-47.333 -31.25,-51.666C-32.25,-52.833 -33.417,-53.833 -34.75,-54.666C-33.083,-52.333 -31.917,-49.666 -31.25,-46.666C-30.583,-43.666 -30.167,-40.499 -30,-37.166L-38.5,-34.166C-43,-44.666 -53.917,-53.166 -71.25,-59.666C-73.75,-62.333 -72.917,-65.749 -68.75,-69.916C-64.75,-74.083 -58.583,-76.333 -50.25,-76.666C-42.25,-77.333 -37.417,-77.333 -35.75,-76.666C-24.083,-74.666 -17.167,-69.999 -15,-62.666&quot;"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_motqot_foreground.xml"
+            line="39"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1905 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M211.962,391.924C211.962,391.924 0.896,-0.001 0.896,-0.001L0.662,-0.001L0.666,-0.041L0.734,-0.063L0.734,-0.322C0.733,-0.343 0.727,-0.362 0.716,-0.379C0.705,-0.396 0.69,-0.407 0.672,-0.414C0.653,-0.421 0.632,-0.421 0.609,-0.414C0.586,-0.407 0.562,-0.39 0.537,-0.363L0.537,-0.063L0.618,-0.044L0.613,-0L0.369,-0L0.375,-0.041L0.447,-0.063L0.447,-0.322C0.447,-0.341 0.442,-0.358 0.431,-0.375C0.42,-0.392 0.406,-0.404 0.387,-0.412C0.368,-0.419 0.347,-0.421 0.323,-0.416C0.298,-0.411 0.272,-0.396 0.245,-0.371L0.245,-0.063L0.323,-0.044L0.317,-0L0.064,-0L0.069,-0.041L0.152,-0.063L0.152,-0.371C0.155,-0.379 0.161,-0.388 0.171,-0.399C0.18,-0.41 0.191,-0.42 0.202,-0.429C0.213,-0.438 0.222,-0.446 0.231,-0.453C0.24,-0.46 0.244,-0.463 0.244,-0.463L0.237,-0.407L0.242,-0.407C0.245,-0.414 0.252,-0.422 0.265,-0.433C0.277,-0.444 0.292,-0.454 0.31,-0.464C0.327,-0.474 0.346,-0.482 0.367,-0.489C0.388,-0.495 0.408,-0.497 0.429,-0.494C0.449,-0.491 0.468,-0.483 0.486,-0.469C0.503,-0.455 0.517,-0.433 0.528,-0.403L0.535,-0.403C0.538,-0.41 0.546,-0.42 0.561,-0.433C0.576,-0.445 0.593,-0.456 0.614,-0.467C0.634,-0.477 0.656,-0.484 0.68,-0.489C0.703,-0.494 0.725,-0.492 0.747,-0.485C0.768,-0.478 0.785,-0.462 0.8,-0.439C0.815,-0.416 0.824,-0.381 0.827,-0.335L0.827,-0.064L0.903,-0.044L0.896,-0.001ZM0.117,-0.401C0.11,-0.378 0.102,-0.361 0.093,-0.35C0.084,-0.339 0.076,-0.331 0.069,-0.328C0.06,-0.324 0.052,-0.323 0.044,-0.326C0.041,-0.327 0.038,-0.329 0.035,-0.331C0.032,-0.333 0.029,-0.336 0.027,-0.34C0.024,-0.349 0.022,-0.359 0.023,-0.368C0.024,-0.388 0.036,-0.406 0.058,-0.423C0.08,-0.44 0.106,-0.453 0.136,-0.462C0.139,-0.463 0.144,-0.464 0.15,-0.466C0.156,-0.468 0.162,-0.47 0.169,-0.472C0.176,-0.474 0.182,-0.476 0.188,-0.478C0.194,-0.479 0.199,-0.48 0.202,-0.481C0.195,-0.476 0.187,-0.471 0.178,-0.465C0.169,-0.459 0.161,-0.452 0.153,-0.446C0.144,-0.439 0.137,-0.431 0.131,-0.424C0.124,-0.416 0.12,-0.408 0.117,-0.401Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="10"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (2146 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M486.852,391.924C486.852,391.924 0.086,-0.317 0.086,-0.317C0.083,-0.318 0.079,-0.319 0.076,-0.321C0.073,-0.322 0.07,-0.325 0.068,-0.329C0.064,-0.335 0.061,-0.344 0.06,-0.356C0.058,-0.375 0.067,-0.395 0.087,-0.415C0.106,-0.434 0.131,-0.451 0.16,-0.464C0.163,-0.465 0.167,-0.467 0.173,-0.47C0.179,-0.473 0.185,-0.475 0.192,-0.478C0.198,-0.481 0.204,-0.483 0.21,-0.486C0.215,-0.488 0.22,-0.49 0.223,-0.491C0.216,-0.486 0.209,-0.479 0.201,-0.472C0.193,-0.465 0.186,-0.457 0.179,-0.449C0.171,-0.441 0.165,-0.433 0.16,-0.425C0.154,-0.416 0.15,-0.408 0.149,-0.401C0.144,-0.376 0.139,-0.358 0.132,-0.347C0.125,-0.335 0.118,-0.327 0.111,-0.322C0.103,-0.317 0.095,-0.315 0.086,-0.317ZM0.296,-0.494C0.315,-0.492 0.335,-0.487 0.358,-0.478C0.381,-0.469 0.402,-0.456 0.421,-0.437C0.44,-0.418 0.456,-0.392 0.47,-0.361C0.483,-0.329 0.489,-0.289 0.489,-0.241C0.489,-0.196 0.482,-0.157 0.469,-0.125C0.455,-0.092 0.437,-0.066 0.415,-0.045C0.393,-0.024 0.368,-0.008 0.341,0.002C0.314,0.011 0.286,0.016 0.259,0.016C0.213,0.016 0.175,0.007 0.146,-0.011C0.117,-0.028 0.094,-0.05 0.077,-0.076C0.06,-0.101 0.049,-0.128 0.043,-0.157C0.036,-0.186 0.033,-0.211 0.033,-0.233C0.033,-0.246 0.034,-0.258 0.035,-0.27C0.036,-0.281 0.038,-0.293 0.041,-0.304C0.042,-0.301 0.045,-0.297 0.05,-0.292C0.054,-0.286 0.06,-0.281 0.068,-0.276C0.075,-0.271 0.084,-0.267 0.095,-0.265C0.106,-0.262 0.118,-0.263 0.132,-0.267C0.132,-0.256 0.133,-0.243 0.134,-0.228C0.135,-0.213 0.136,-0.199 0.139,-0.187C0.14,-0.18 0.143,-0.169 0.147,-0.153C0.151,-0.137 0.158,-0.121 0.168,-0.104C0.178,-0.087 0.192,-0.071 0.21,-0.058C0.227,-0.045 0.25,-0.038 0.278,-0.037C0.287,-0.037 0.297,-0.039 0.31,-0.044C0.323,-0.049 0.335,-0.057 0.347,-0.069C0.359,-0.081 0.369,-0.097 0.378,-0.118C0.386,-0.139 0.391,-0.165 0.392,-0.196C0.392,-0.201 0.392,-0.211 0.391,-0.226C0.39,-0.241 0.387,-0.258 0.383,-0.277C0.379,-0.296 0.373,-0.316 0.366,-0.337C0.359,-0.358 0.349,-0.376 0.337,-0.392C0.324,-0.408 0.309,-0.42 0.291,-0.429C0.272,-0.437 0.25,-0.439 0.224,-0.434C0.227,-0.437 0.231,-0.442 0.237,-0.449C0.242,-0.455 0.249,-0.461 0.256,-0.468C0.263,-0.474 0.27,-0.48 0.277,-0.485C0.284,-0.49 0.291,-0.493 0.296,-0.494Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="14"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1180 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M640.32,391.924C640.32,391.924 0.198,-0.179 0.198,-0.179C0.198,-0.138 0.204,-0.11 0.216,-0.094C0.219,-0.09 0.223,-0.087 0.227,-0.084C0.231,-0.081 0.236,-0.079 0.241,-0.077C0.234,-0.066 0.225,-0.054 0.215,-0.042C0.204,-0.029 0.192,-0.017 0.178,-0.006L0.169,-0C0.158,-0.005 0.147,-0.012 0.136,-0.023C0.125,-0.034 0.117,-0.05 0.111,-0.071C0.108,-0.082 0.106,-0.093 0.105,-0.106C0.103,-0.118 0.103,-0.132 0.103,-0.147L0.105,-0.434L0.035,-0.434L0.035,-0.464C0.081,-0.499 0.126,-0.545 0.171,-0.602L0.2,-0.602L0.2,-0.481L0.356,-0.481L0.351,-0.433L0.199,-0.433L0.198,-0.179ZM0.294,-0.077C0.299,-0.101 0.306,-0.119 0.313,-0.131C0.32,-0.142 0.328,-0.15 0.335,-0.154C0.343,-0.159 0.351,-0.16 0.36,-0.159C0.363,-0.158 0.367,-0.157 0.37,-0.155C0.373,-0.153 0.376,-0.15 0.378,-0.147C0.381,-0.14 0.384,-0.131 0.385,-0.12C0.386,-0.101 0.376,-0.081 0.356,-0.061C0.334,-0.041 0.309,-0.025 0.282,-0.014C0.279,-0.013 0.274,-0.011 0.268,-0.009C0.262,-0.006 0.256,-0.004 0.25,-0.001C0.243,0.002 0.237,0.004 0.231,0.006C0.225,0.008 0.221,0.009 0.218,0.01C0.225,0.005 0.232,-0 0.24,-0.008C0.248,-0.015 0.256,-0.022 0.264,-0.03C0.271,-0.037 0.278,-0.045 0.283,-0.054C0.288,-0.062 0.292,-0.07 0.294,-0.077Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="18"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1808 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M275.352,590.019C275.352,590.019 0.531,0.204 0.531,0.204L0.269,0.204L0.274,0.161L0.357,0.141L0.357,-0.362C0.349,-0.378 0.34,-0.391 0.33,-0.401C0.319,-0.41 0.309,-0.418 0.299,-0.423C0.288,-0.428 0.278,-0.432 0.269,-0.435C0.26,-0.437 0.252,-0.438 0.246,-0.438C0.223,-0.439 0.204,-0.433 0.189,-0.421C0.174,-0.408 0.162,-0.393 0.153,-0.374C0.143,-0.355 0.137,-0.335 0.133,-0.314C0.129,-0.293 0.127,-0.274 0.127,-0.258C0.127,-0.244 0.128,-0.228 0.13,-0.211C0.131,-0.194 0.135,-0.176 0.14,-0.159C0.145,-0.142 0.151,-0.125 0.16,-0.11C0.168,-0.095 0.179,-0.082 0.193,-0.072C0.18,-0.065 0.167,-0.058 0.152,-0.052C0.136,-0.046 0.119,-0.041 0.1,-0.038C0.098,-0.037 0.095,-0.037 0.09,-0.037C0.079,-0.049 0.069,-0.063 0.062,-0.078C0.055,-0.093 0.049,-0.109 0.044,-0.126C0.039,-0.142 0.036,-0.159 0.034,-0.176C0.032,-0.193 0.031,-0.209 0.031,-0.224C0.032,-0.265 0.039,-0.3 0.053,-0.33C0.066,-0.359 0.082,-0.384 0.1,-0.404C0.117,-0.423 0.134,-0.439 0.151,-0.45C0.168,-0.46 0.18,-0.468 0.187,-0.471C0.21,-0.482 0.232,-0.489 0.253,-0.491C0.274,-0.492 0.292,-0.492 0.308,-0.489C0.324,-0.486 0.337,-0.482 0.348,-0.477C0.359,-0.472 0.365,-0.468 0.368,-0.467L0.433,-0.488L0.449,-0.487L0.449,0.141L0.537,0.159L0.531,0.204ZM0.236,-0.041C0.252,-0.06 0.266,-0.072 0.278,-0.079C0.29,-0.085 0.3,-0.088 0.308,-0.089C0.317,-0.09 0.325,-0.087 0.332,-0.081C0.335,-0.08 0.337,-0.077 0.339,-0.074C0.341,-0.071 0.342,-0.067 0.342,-0.062C0.343,-0.058 0.342,-0.054 0.341,-0.05C0.34,-0.045 0.338,-0.04 0.336,-0.035C0.329,-0.018 0.311,-0.005 0.283,0.003C0.256,0.01 0.226,0.012 0.195,0.009C0.192,0.009 0.187,0.009 0.181,0.008C0.174,0.007 0.147,0.004 0.141,0.003C0.135,0.002 0.131,0.002 0.128,0.001C0.136,-0 0.145,-0.002 0.156,-0.005C0.167,-0.007 0.177,-0.01 0.187,-0.013C0.197,-0.016 0.206,-0.02 0.215,-0.025C0.224,-0.03 0.231,-0.035 0.236,-0.041Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="22"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (2146 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M441.756,590.019C441.756,590.019 0.086,-0.317 0.086,-0.317C0.083,-0.318 0.079,-0.319 0.076,-0.321C0.073,-0.322 0.07,-0.325 0.068,-0.329C0.064,-0.335 0.061,-0.344 0.06,-0.356C0.058,-0.375 0.067,-0.395 0.087,-0.415C0.106,-0.434 0.131,-0.451 0.16,-0.464C0.163,-0.465 0.167,-0.467 0.173,-0.47C0.179,-0.473 0.185,-0.475 0.192,-0.478C0.198,-0.481 0.204,-0.483 0.21,-0.486C0.215,-0.488 0.22,-0.49 0.223,-0.491C0.216,-0.486 0.209,-0.479 0.201,-0.472C0.193,-0.465 0.186,-0.457 0.179,-0.449C0.171,-0.441 0.165,-0.433 0.16,-0.425C0.154,-0.416 0.15,-0.408 0.149,-0.401C0.144,-0.376 0.139,-0.358 0.132,-0.347C0.125,-0.335 0.118,-0.327 0.111,-0.322C0.103,-0.317 0.095,-0.315 0.086,-0.317ZM0.296,-0.494C0.315,-0.492 0.335,-0.487 0.358,-0.478C0.381,-0.469 0.402,-0.456 0.421,-0.437C0.44,-0.418 0.456,-0.392 0.47,-0.361C0.483,-0.329 0.489,-0.289 0.489,-0.241C0.489,-0.196 0.482,-0.157 0.469,-0.125C0.455,-0.092 0.437,-0.066 0.415,-0.045C0.393,-0.024 0.368,-0.008 0.341,0.002C0.314,0.011 0.286,0.016 0.259,0.016C0.213,0.016 0.175,0.007 0.146,-0.011C0.117,-0.028 0.094,-0.05 0.077,-0.076C0.06,-0.101 0.049,-0.128 0.043,-0.157C0.036,-0.186 0.033,-0.211 0.033,-0.233C0.033,-0.246 0.034,-0.258 0.035,-0.27C0.036,-0.281 0.038,-0.293 0.041,-0.304C0.042,-0.301 0.045,-0.297 0.05,-0.292C0.054,-0.286 0.06,-0.281 0.068,-0.276C0.075,-0.271 0.084,-0.267 0.095,-0.265C0.106,-0.262 0.118,-0.263 0.132,-0.267C0.132,-0.256 0.133,-0.243 0.134,-0.228C0.135,-0.213 0.136,-0.199 0.139,-0.187C0.14,-0.18 0.143,-0.169 0.147,-0.153C0.151,-0.137 0.158,-0.121 0.168,-0.104C0.178,-0.087 0.192,-0.071 0.21,-0.058C0.227,-0.045 0.25,-0.038 0.278,-0.037C0.287,-0.037 0.297,-0.039 0.31,-0.044C0.323,-0.049 0.335,-0.057 0.347,-0.069C0.359,-0.081 0.369,-0.097 0.378,-0.118C0.386,-0.139 0.391,-0.165 0.392,-0.196C0.392,-0.201 0.392,-0.211 0.391,-0.226C0.39,-0.241 0.387,-0.258 0.383,-0.277C0.379,-0.296 0.373,-0.316 0.366,-0.337C0.359,-0.358 0.349,-0.376 0.337,-0.392C0.324,-0.408 0.309,-0.42 0.291,-0.429C0.272,-0.437 0.25,-0.439 0.224,-0.434C0.227,-0.437 0.231,-0.442 0.237,-0.449C0.242,-0.455 0.249,-0.461 0.256,-0.468C0.263,-0.474 0.27,-0.48 0.277,-0.485C0.284,-0.49 0.291,-0.493 0.296,-0.494Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="26"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1182 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M595.224,590.019C595.224,590.019 0.198,-0.179 0.198,-0.179C0.198,-0.138 0.204,-0.11 0.216,-0.094C0.219,-0.09 0.223,-0.087 0.227,-0.084C0.231,-0.081 0.236,-0.079 0.241,-0.077C0.234,-0.066 0.225,-0.054 0.215,-0.042C0.204,-0.029 0.192,-0.017 0.178,-0.006L0.169,-0C0.158,-0.005 0.147,-0.012 0.136,-0.023C0.125,-0.034 0.117,-0.05 0.111,-0.071C0.108,-0.082 0.106,-0.093 0.105,-0.106C0.103,-0.118 0.103,-0.132 0.103,-0.147L0.105,-0.434L0.035,-0.434L0.035,-0.464C0.081,-0.499 0.126,-0.545 0.171,-0.602L0.2,-0.602L0.2,-0.481L0.356,-0.481L0.351,-0.433L0.199,-0.433L0.198,-0.179ZM0.294,-0.077C0.299,-0.101 0.306,-0.119 0.313,-0.131C0.32,-0.142 0.328,-0.15 0.335,-0.154C0.343,-0.159 0.351,-0.16 0.36,-0.159C0.363,-0.158 0.367,-0.157 0.37,-0.155C0.373,-0.153 0.376,-0.15 0.378,-0.147C0.381,-0.14 0.384,-0.131 0.385,-0.12C0.386,-0.101 0.376,-0.081 0.356,-0.061C0.334,-0.041 0.309,-0.025 0.282,-0.014C0.279,-0.013 0.274,-0.011 0.268,-0.009C0.262,-0.006 0.256,-0.004 0.25,-0.001C0.243,0.002 0.237,0.004 0.231,0.006C0.225,0.008 0.221,0.009 0.218,0.01C0.225,0.005 0.232,-0 0.24,-0.008C0.248,-0.015 0.256,-0.022 0.264,-0.03C0.271,-0.037 0.278,-0.045 0.283,-0.054C0.288,-0.062 0.292,-0.07 0.294,-0.077Z&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="30"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="VectorPath"
+        severity="Warning"
+        message="Very long vector path (1365 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector."
+        category="Performance"
+        priority="5"
+        summary="Long vector paths"
+        explanation="Using long vector paths is bad for performance. There are several ways to make the `pathData` shorter:&#xA;* Using less precision&#xA;* Removing some minor details&#xA;* Using the Android Studio vector conversion tool&#xA;* Rasterizing the image (converting to PNG)"
+        errorLine1="  android:pathData=&quot;M28.4533,360.369C28.4533,360.369 0,-23.416 1.833,-24.249C3.833,-24.916 6,-25.416L-1.25,-25.416L21.75,-30.916L-2.5,-28.916C-2.667,-31.083 5.75,-34.666 22.75,-39.666C39.583,-44.833 53.833,-41.749 65.5,-30.416L71,-22.666L72.75,-17.666C66.75,4.168 60,10.168 52.5,0.334C44.833,-9.666 27.25,-15.749 -0.25,-17.916L14,-22.666L0,-23.416ZM-105.75,-19.916C-101.583,-21.082 -98.5,-21.666 -96.5,-21.666L-68.5,-20.166L-85,-18.416L-72.5,-18.666C-84.667,-17.666 -94.333,-12.582 -101.5,-3.416C-107.667,-8.582 -109.083,-14.082 -105.75,-19.916M-26.25,-7.916L-23.75,1.334C-23.417,-1.832 -22.833,-4.499 -22,-6.666L-21,-5.916L-16,11.084L-17,-6.166C-12,0.334 -8.333,7.418 -6,15.084C-2.167,27.418 -3.167,38.917 -9,49.584C-18,53.084 -27.167,53.917 -36.5,52.084C-47.667,49.751 -55.75,44.001 -60.75,34.834C-54.583,19.334 -46.333,5.168 -36,-7.666L-26.25,-7.916ZM-15,-62.666L-16,-49.166C-17.167,-45.499 -19.167,-41.249 -22,-36.416L-20.75,-52.166L-24,-36.666L-28.5,-36.666C-26.667,-42.333 -27.583,-47.333 -31.25,-51.666C-32.25,-52.833 -33.417,-53.833 -34.75,-54.666C-33.083,-52.333 -31.917,-49.666 -31.25,-46.666C-30.583,-43.666 -30.167,-40.499 -30,-37.166L-38.5,-34.166C-43,-44.666 -53.917,-53.166 -71.25,-59.666C-73.75,-62.333 -72.917,-65.749 -68.75,-69.916C-64.75,-74.083 -58.583,-76.333 -50.25,-76.666C-42.25,-77.333 -37.417,-77.333 -35.75,-76.666C-24.083,-74.666 -17.167,-69.999 -15,-62.666&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="35"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.lightGray` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;color name=&quot;lightGray&quot;>#F5F5F5&lt;/color>"
+        errorLine2="        ~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\colors.xml"
+            line="9"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.mediumGray` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;color name=&quot;mediumGray&quot;>#E0E0E0&lt;/color>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\colors.xml"
+            line="10"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.quoteBackground` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;color name=&quot;quoteBackground&quot;>#F8F9FA&lt;/color>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\colors.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.color.errorRed` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;color name=&quot;errorRed&quot;>#F44336&lt;/color>"
+        errorLine2="        ~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\colors.xml"
+            line="13"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.ic_launcher_foreground` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\ic_launcher_foreground.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.drawable.motqot` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\drawable\motqot.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.loading_quote` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;string name=&quot;loading_quote&quot;>Loading your motivational quote…&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\strings.xml"
+            line="8"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.save` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;string name=&quot;save&quot;>Save&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\strings.xml"
+            line="18"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.error_network` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;string name=&quot;error_network&quot;>Network error. Please check your connection and try again.&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\strings.xml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.error_api` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;string name=&quot;error_api&quot;>Error communicating with Perplexity API. Please try again later.&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\strings.xml"
+            line="30"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.string.tap_to_view` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds.&#xA;&#xA;&#xA;The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.&#xA;&#xA;You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests =true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests =true.&#xA;,"
+        errorLine1=" &lt;string name=&quot;tap_to_view&quot;>Tap to view&lt;/string>"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\values\strings.xml"
+            line="36"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        severity="Warning"
+        message="The application adaptive icon is missing a monochrome tag"
+        category="Usability:Icons"
+        priority="6"
+        summary="Monochrome icon is not defined"
+        explanation="If `android:roundIcon` and `android:icon` are both in your manifest, you must either remove the reference to `android:roundIcon` if it is not needed; or, supply the monochrome icon in the drawable defined by the `android:roundIcon` and `android:icon` attribute.&#xA;&#xA;For example, if `android:roundIcon` and `android:icon` are both in the manifest, a launcher might choose to use `android:roundIcon` over `android:icon` to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in `android:roundIcon`."
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="MonochromeLauncherIcon"
+        severity="Warning"
+        message="The application adaptive roundIcon is missing a monochrome tag"
+        category="Usability:Icons"
+        priority="6"
+        summary="Monochrome icon is not defined"
+        explanation="If `android:roundIcon` and `android:icon` are both in your manifest, you must either remove the reference to `android:roundIcon` if it is not needed; or, supply the monochrome icon in the drawable defined by the `android:roundIcon` and `android:icon` attribute.&#xA;&#xA;For example, if `android:roundIcon` and `android:icon` are both in the manifest, a launcher might choose to use `android:roundIcon` over `android:icon` to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in `android:roundIcon`."
+        errorLine1="&lt;adaptive-icon xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;>"
+        errorLine2="^">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\res\mipmap-anydpi-v26\ic_launcher_round.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="        sharedPreferences.edit()"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\repository\QuoteRepository.kt"
+            line="70"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                    prefs.edit()"
+        errorLine2="                    ~~~~~~~~~~~~">
+        <location
+            file="D:\Users\nicow\Web\motqot\app\src\main\java\rocks\wiedemann\motqot\SettingsActivity.kt"
+            line="123"
+            column="21"/>
+    </issue>
+
+</issues>

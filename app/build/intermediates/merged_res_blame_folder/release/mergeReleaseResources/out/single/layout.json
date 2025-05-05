@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "rocks.wiedemann.motqot.app-mergeReleaseResources-47:/layout/activity_main.xml",
+        "source": "rocks.wiedemann.motqot.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "rocks.wiedemann.motqot.app-mergeReleaseResources-47:/layout/activity_settings.xml",
+        "source": "rocks.wiedemann.motqot.app-main-49:/layout/activity_settings.xml"
+    }
+]

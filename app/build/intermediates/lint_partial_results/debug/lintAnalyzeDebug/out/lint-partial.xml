@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="partial_results">
+    <map id="NotificationPermission">
+        <entry
+            name="source"
+            boolean="true"/>
+    </map>
+    <map id="UnsafeImplicitIntentLaunch">
+            <map id="actionsSent">
+                    <map id="android.settings.APPLICATION_DETAILS_SETTINGS (used to start an activity)">
+                        <location id="0"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/rocks/wiedemann/motqot/SettingsActivity.kt"
+                            line="69"
+                            column="46"
+                            startOffset="2977"
+                            endLine="69"
+                            endColumn="115"
+                            endOffset="3046"/>
+                        <location id="1"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/rocks/wiedemann/motqot/SettingsActivity.kt"
+                            line="164"
+                            column="38"
+                            startOffset="7067"
+                            endLine="164"
+                            endColumn="107"
+                            endOffset="7136"/>
+                    </map>
+            </map>
+    </map>
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="rocks.wiedemann.motqot.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.color.errorRed"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="13"
+            column="9"
+            startOffset="497"
+            endLine="13"
+            endColumn="24"
+            endOffset="512"/>
+        <location id="R.color.lightGray"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="9"
+            column="9"
+            startOffset="323"
+            endLine="9"
+            endColumn="25"
+            endOffset="339"/>
+        <location id="R.color.mediumGray"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="10"
+            column="9"
+            startOffset="365"
+            endLine="10"
+            endColumn="26"
+            endOffset="382"/>
+        <location id="R.color.quoteBackground"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="12"
+            column="9"
+            startOffset="449"
+            endLine="12"
+            endColumn="31"
+            endOffset="471"/>
+        <location id="R.drawable.ic_launcher_foreground"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_launcher_foreground.xml"
+            line="2"
+            column="1"
+            startOffset="40"
+            endLine="16"
+            endColumn="10"
+            endOffset="590"/>
+        <location id="R.drawable.motqot"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/motqot.xml"
+            line="2"
+            column="1"
+            startOffset="40"
+            endLine="42"
+            endColumn="10"
+            endOffset="12875"/>
+        <location id="R.string.error_api"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="30"
+            column="10"
+            startOffset="1542"
+            endLine="30"
+            endColumn="26"
+            endOffset="1558"/>
+        <location id="R.string.error_network"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="29"
+            column="10"
+            startOffset="1443"
+            endLine="29"
+            endColumn="30"
+            endOffset="1463"/>
+        <location id="R.string.loading_quote"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="8"
+            column="10"
+            startOffset="239"
+            endLine="8"
+            endColumn="30"
+            endOffset="259"/>
+        <location id="R.string.save"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="18"
+            column="10"
+            startOffset="800"
+            endLine="18"
+            endColumn="21"
+            endOffset="811"/>
+        <location id="R.string.tap_to_view"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="36"
+            column="10"
+            startOffset="1904"
+            endLine="36"
+            endColumn="28"
+            endOffset="1922"/>
+        <entry
+            name="model"
+            string="array[language_entries(U),language_values(U)],attr[colorPrimary(R),actionBarSize(R),colorPrimaryVariant(R),colorOnSurface(R)],color[darkGray(U),ic_launcher_background(U),colorPrimary(U),colorPrimaryDark(U),colorAccent(U),colorAccentDark(U),white(U),black(U),lightGray(D),mediumGray(D),quoteBackground(D),errorRed(D)],drawable[ic_launcher_foreground(D),ic_motqot_foreground(U),motqot(D)],font[roboto(U),roboto_regular(R)],id[toolbar(U),tvQuoteTitle(U),cardQuote(U),progressBar(U),tvQuote(U),tvDate(U),btnGenerateQuote(U),btnShareQuote(U),settings_container(U),action_settings(U)],layout[activity_main(U),activity_settings(U)],menu[menu_main(U)],mipmap[ic_launcher(U),ic_launcher_round(U)],string[app_name(U),settings_title(U),appbar_scrolling_view_behavior(R),quote_of_the_day(U),no_quote_available(U),generate_new_quote(U),share_quote(U),settings(U),loading_quote(D),api_key_title(U),api_key_summary(U),api_key_dialog_title(U),save(D),cancel(U),language_title(U),language_summary(U),notification_title(U),notification_summary(U),notification_time_title(U),notification_time_summary(U),error_no_api_key(U),error_network(D),error_api(D),notification_channel_name(U),notification_channel_description(U),notification_title_text(U),tap_to_view(D),notification_permission_granted(U),notification_permission_denied(U),notification_permission_rationale(U),notification_permission_required(U),notification_permission_settings_message(U),open_settings(U)],style[Theme_MotQot(U),TextAppearance_MaterialComponents_Headline5(R),QuoteCardStyle(U),QuoteTextStyle(U),TextAppearance_MaterialComponents_Caption(R),AppButtonStyle(U),Theme_MaterialComponents_DayNight_DarkActionBar(R),Widget_MaterialComponents_Button(R)],xml[preferences(U)];15^16,21^47^2^3^28^29^48^18^49^2a^4a^4b^6^1b^2b^19^4c^2c^1d,22^47^2^3^28,23^2d,24^7^13,25^7^13,47^4d^8^9^c^a^b^d^4^15,4a^5,4c^4e,4f^31^30^2f^0^1^35^34^37^36^39^38;;;"/>
+    </map>
+
+</incidents>

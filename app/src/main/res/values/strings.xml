@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">MotQot</string>
+	<string name="settings_title">Settings</string>
+
+	<!-- Main Screen -->
+	<string name="quote_of_the_day">Quote of the Day</string>
+	<string name="loading_quote">Loading your motivational quote…</string>
+	<string name="no_quote_available">No quote available yet. Tap to generate one.</string>
+	<string name="generate_new_quote">Generate New Quote</string>
+	<string name="share_quote">Share Quote</string>
+	<string name="settings">Settings</string>
+
+	<!-- Settings Screen -->
+	<string name="api_key_title">Perplexity API Key</string>
+	<string name="api_key_summary">Enter your Perplexity API key to generate quotes</string>
+	<string name="api_key_dialog_title">Enter API Key</string>
+	<string name="save">Save</string>
+	<string name="cancel">Cancel</string>
+	<string name="language_title">Language</string>
+	<string name="language_summary">Select your preferred language for quotes</string>
+	<string name="notification_title">Daily Notifications</string>
+	<string name="notification_summary">Receive a new motivational quote every day</string>
+	<string name="notification_time_title">Notification Time</string>
+	<string name="notification_time_summary">Set the time to receive daily quotes</string>
+
+	<!-- Error Messages -->
+	<string name="error_no_api_key">Please enter your Perplexity API key in settings</string>
+	<string name="error_network">Network error. Please check your connection and try again.</string>
+	<string name="error_api">Error communicating with Perplexity API. Please try again later.</string>
+
+	<!-- Notifications -->
+	<string name="notification_channel_name">Daily Quotes</string>
+	<string name="notification_channel_description">Daily motivational quotes from MotQot</string>
+	<string name="notification_title_text">Your Daily Motivation</string>
+	<string name="tap_to_view">Tap to view</string>
+
+	<!-- Notification Permissions -->
+	<string name="notification_permission_granted">Notification permission granted</string>
+	<string name="notification_permission_denied">Notification permission denied. You won\'t receive daily quotes.</string>
+	<string name="notification_permission_rationale">Notification permission is needed to deliver your daily motivational quotes.</string>
+	<string name="notification_permission_required">Notification Permission Required</string>
+	<string name="notification_permission_settings_message">Daily notifications require permission to display. Please enable notifications in app settings to receive your daily quotes.</string>
+	<string name="open_settings">Open Settings</string>
+</resources>

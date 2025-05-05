@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "rocks.wiedemann.motqot.app-mergeReleaseResources-46:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\88caf39869a9e3d52f21a0f0ee5e5f73\\transformed\\appcompat-1.6.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

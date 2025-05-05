@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_key_dialog_title">Introducir clave API</string>
+    <string name="api_key_summary">Introduce tu clave API de Perplexity para generar frases</string>
+    <string name="api_key_title">Clave API de Perplexity</string>
+    <string name="app_name">MotQot</string>
+    <string name="cancel">Cancelar</string>
+    <string name="error_api">Error al comunicarse con la API de Perplexity. Por favor, inténtalo más
+		tarde.</string>
+    <string name="error_network">Error de red. Por favor, comprueba tu conexión e inténtalo de
+		nuevo.</string>
+    <string name="error_no_api_key">Por favor, introduce tu clave API de Perplexity en la
+		configuración</string>
+    <string name="generate_new_quote">Generar nueva frase</string>
+    <string name="language_summary">Selecciona tu idioma preferido para las frases</string>
+    <string name="language_title">Idioma</string>
+    <string name="loading_quote">Cargando tu frase motivadora…</string>
+    <string name="no_quote_available">No hay frase disponible. Toca para generar una.</string>
+    <string name="notification_channel_description">Frases motivadoras diarias de MotQot</string>
+    <string name="notification_channel_name">Frases Diarias</string>
+    <string name="notification_permission_denied">Permiso de notificación denegado. No recibirás frases diarias.</string>
+    <string name="notification_permission_granted">Permiso de notificación concedido</string>
+    <string name="notification_permission_rationale">El permiso de notificación es necesario para enviarte frases motivadoras diarias.</string>
+    <string name="notification_permission_required">Permiso de notificación requerido</string>
+    <string name="notification_permission_settings_message">Las notificaciones diarias requieren permiso. Por favor, activa las notificaciones en los ajustes de la aplicación para recibir tus frases diarias.</string>
+    <string name="notification_summary">Recibe una nueva frase motivadora cada día</string>
+    <string name="notification_time_summary">Establece la hora para recibir frases diarias</string>
+    <string name="notification_time_title">Hora de notificación</string>
+    <string name="notification_title">Notificaciones diarias</string>
+    <string name="notification_title_text">Tu Motivación Diaria</string>
+    <string name="open_settings">Abrir Ajustes</string>
+    <string name="quote_of_the_day">Frase del Día</string>
+    <string name="save">Guardar</string>
+    <string name="settings">Configuración</string>
+    <string name="settings_title">Configuración</string>
+    <string name="share_quote">Compartir frase</string>
+    <string name="tap_to_view">Toca para ver</string>
+</resources>
