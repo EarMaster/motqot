@@ -34,7 +34,7 @@
     <string name="api_key_dialog_title">API-Schlüssel eingeben</string>
     <string name="api_key_summary">Gib deinen Perplexity API-Schlüssel ein, um Zitate zu generieren</string>
     <string name="api_key_title">Perplexity API-Schlüssel</string>
-    <string name="app_name">MotQot</string>
+    <string name="app_name">motqot</string>
     <string name="bottomsheet_action_collapse">Ansicht am unteren Rand minimieren</string>
     <string name="bottomsheet_action_expand">Ansicht am unteren Rand maximieren</string>
     <string name="bottomsheet_action_expand_halfway">Zur Hälfte maximieren</string>

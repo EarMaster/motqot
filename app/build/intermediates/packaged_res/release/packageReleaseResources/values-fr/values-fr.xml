@@ -3,7 +3,7 @@
     <string name="api_key_dialog_title">Entrer la clé API</string>
     <string name="api_key_summary">Entrez votre clé API Perplexity pour générer des citations</string>
     <string name="api_key_title">Clé API Perplexity</string>
-    <string name="app_name">MotQot</string>
+    <string name="app_name">motqot</string>
     <string name="cancel">Annuler</string>
     <string name="error_api">Erreur de communication avec l\'API Perplexity. Veuillez réessayer plus
 		tard.</string>

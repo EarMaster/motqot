@@ -5,19 +5,25 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".SettingsActivity">
+	tools:context=".SettingsActivity"
+	android:fitsSystemWindows="true"
+	android:background="?android:attr/colorBackground">
 
 	<com.google.android.material.appbar.AppBarLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:theme="@style/Theme.MotQot">
+		android:theme="@style/Theme.MotQot"
+		android:fitsSystemWindows="true">
 
 		<androidx.appcompat.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
 			android:background="?attr/colorPrimary"
-			app:popupTheme="@style/Theme.MotQot" />
+			app:navigationIcon="@drawable/ic_arrow_back"
+			app:title="@string/settings"
+			app:titleTextColor="@color/white"
+			android:elevation="4dp" />
 
 	</com.google.android.material.appbar.AppBarLayout>
 
@@ -25,6 +31,7 @@
 		android:id="@+id/settings_container"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:background="?android:attr/colorBackground"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

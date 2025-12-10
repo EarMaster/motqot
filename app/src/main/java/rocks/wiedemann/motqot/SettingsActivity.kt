@@ -1,34 +1,44 @@
 package rocks.wiedemann.motqot
 
 import android.app.TimePickerDialog
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
+import androidx.appcompat.widget.Toolbar
+import com.google.android.material.card.MaterialCardView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
+import rocks.wiedemann.motqot.worker.DailyQuoteWorker
 import androidx.work.Data
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
-import rocks.wiedemann.motqot.databinding.ActivitySettingsBinding
-import rocks.wiedemann.motqot.worker.DailyQuoteWorker
 import java.util.Calendar
 import java.util.concurrent.TimeUnit
-import android.content.Intent
-import android.os.Build
 
 class SettingsActivity : AppCompatActivity() {
     
-    private lateinit var binding: ActivitySettingsBinding
+    private lateinit var sharedPreferences: SharedPreferences
+    private val TAG = "SettingsActivity"
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySettingsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_settings)
         
-        setSupportActionBar(binding.toolbar)
+        // Set up the toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.title = getString(R.string.settings)
         
+        // Add the settings fragment
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
@@ -38,156 +48,149 @@ class SettingsActivity : AppCompatActivity() {
     }
     
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressed()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
         }
+        return super.onOptionsItemSelected(item)
     }
     
-    class SettingsFragment : PreferenceFragmentCompat() {
-        
-        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.preferences, rootKey)
-            
-            // Set up notification toggle preference
-            val notificationPref = findPreference<androidx.preference.SwitchPreferenceCompat>(MotQotApplication.KEY_ENABLE_NOTIFICATIONS)
-            notificationPref?.setOnPreferenceChangeListener { _, newValue ->
-                val enabled = newValue as Boolean
-                if (enabled) {
-                    // If enabling notifications, check for permission on Android 13+
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && 
-                        !MotQotApplication.hasNotificationPermission(requireContext())) {
-                        // Show dialog explaining notification permission
-                        android.app.AlertDialog.Builder(requireContext())
-                            .setTitle(R.string.notification_permission_required)
-                            .setMessage(R.string.notification_permission_settings_message)
-                            .setPositiveButton(R.string.open_settings) { _, _ ->
-                                // Open app settings so user can enable notifications
-                                val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                                intent.data = android.net.Uri.fromParts("package", requireContext().packageName, null)
-                                startActivity(intent)
-                            }
-                            .setNegativeButton(R.string.cancel, null)
-                            .show()
-                    }
-                }
-                true // Return true to update the state of the Preference
-            }
-            
-            // Set up time preference
-            val timePref = findPreference<Preference>(MotQotApplication.KEY_NOTIFICATION_TIME)
-            timePref?.setOnPreferenceClickListener {
-                showTimePickerDialog()
-                true
-            }
-            
-            // Update time preference summary
-            val prefs = requireContext().getSharedPreferences(
-                MotQotApplication.PREFS_NAME, 
-                MODE_PRIVATE
-            )
-            val hour = prefs.getInt(
-                "notification_hour", 
-                MotQotApplication.DEFAULT_NOTIFICATION_HOUR
-            )
-            val minute = prefs.getInt(
-                "notification_minute", 
-                MotQotApplication.DEFAULT_NOTIFICATION_MINUTE
-            )
-            
-            timePref?.summary = String.format("%02d:%02d", hour, minute)
+    private fun updateSummaries() {
+        // Update API key summary
+        val apiKey = sharedPreferences.getString(MotQotApplication.KEY_API_KEY, null)
+        val apiKeySummary = findViewById<TextView>(R.id.api_key_summary)
+        if (!apiKey.isNullOrEmpty()) {
+            apiKeySummary.text = getString(R.string.api_key_set)
+        } else {
+            apiKeySummary.text = getString(R.string.api_key_summary)
         }
         
-        private fun showTimePickerDialog() {
-            val prefs = requireContext().getSharedPreferences(
-                MotQotApplication.PREFS_NAME, 
-                MODE_PRIVATE
-            )
+        // Update language summary
+        val language = sharedPreferences.getString(MotQotApplication.KEY_LANGUAGE, "en") ?: "en"
+        val languageSummary = findViewById<TextView>(R.id.language_summary)
+        val languageName = when(language) {
+            "en" -> "English"
+            "de" -> "Deutsch"
+            "fr" -> "Français"
+            "es" -> "Español"
+            else -> "English"
+        }
+        languageSummary.text = languageName
+        
+        // Update time summary
+        val hour = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_HOUR, 8)
+        val minute = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_MINUTE, 0)
+        val timeSummary = findViewById<TextView>(R.id.notification_time_summary)
+        val timeString = String.format("%02d:%02d", hour, minute)
+        timeSummary.text = timeString
+    }
+    
+    private fun showApiKeyDialog() {
+        val view = layoutInflater.inflate(R.layout.dialog_edit_text, null)
+        val textInputLayout = view.findViewById<TextInputLayout>(R.id.text_input_layout)
+        val editText = view.findViewById<TextInputEditText>(R.id.edit_text)
+        
+        textInputLayout.hint = getString(R.string.api_key_title)
+        editText.setText(sharedPreferences.getString(MotQotApplication.KEY_API_KEY, ""))
+        
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.api_key_dialog_title)
+            .setView(view)
+            .setPositiveButton(R.string.save) { _, _ ->
+                val apiKey = editText.text.toString().trim()
+                sharedPreferences.edit().putString(MotQotApplication.KEY_API_KEY, apiKey).apply()
+                updateSummaries()
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+    
+    private fun showLanguageDialog() {
+        val languages = arrayOf("English", "Deutsch", "Français", "Español")
+        val values = arrayOf("en", "de", "fr", "es")
+        val currentLanguage = sharedPreferences.getString(MotQotApplication.KEY_LANGUAGE, "en") ?: "en"
+        val currentIndex = values.indexOf(currentLanguage)
+        
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.language_title)
+            .setSingleChoiceItems(languages, currentIndex) { dialog, which ->
+                sharedPreferences.edit().putString(MotQotApplication.KEY_LANGUAGE, values[which]).apply()
+                updateSummaries()
+                dialog.dismiss()
+            }
+            .setNegativeButton(R.string.cancel, null)
+            .show()
+    }
+    
+    private fun showTimePickerDialog() {
+        val hour = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_HOUR, 8)
+        val minute = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_MINUTE, 0)
+        
+        TimePickerDialog(
+            this,
+            { _, hourOfDay, minuteOfHour ->
+                sharedPreferences.edit()
+                    .putInt(MotQotApplication.KEY_NOTIFICATION_HOUR, hourOfDay)
+                    .putInt(MotQotApplication.KEY_NOTIFICATION_MINUTE, minuteOfHour)
+                    .apply()
+                updateSummaries()
+                scheduleNotifications()
+            },
+            hour,
+            minute,
+            true
+        ).show()
+    }
+    
+    private fun scheduleNotifications() {
+        val hour = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_HOUR, 8)
+        val minute = sharedPreferences.getInt(MotQotApplication.KEY_NOTIFICATION_MINUTE, 0)
+        
+        // Create notification data
+        val data = Data.Builder()
+            .putInt("hour", hour)
+            .putInt("minute", minute)
+            .build()
+        
+        // Calculate initial delay
+        val currentCalendar = Calendar.getInstance()
+        val targetCalendar = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, hour)
+            set(Calendar.MINUTE, minute)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
             
-            val hour = prefs.getInt(
-                "notification_hour", 
-                MotQotApplication.DEFAULT_NOTIFICATION_HOUR
-            )
-            val minute = prefs.getInt(
-                "notification_minute", 
-                MotQotApplication.DEFAULT_NOTIFICATION_MINUTE
-            )
-            
-            TimePickerDialog(
-                requireContext(),
-                { _, selectedHour, selectedMinute ->
-                    // Save selected time
-                    prefs.edit()
-                        .putInt("notification_hour", selectedHour)
-                        .putInt("notification_minute", selectedMinute)
-                        .apply()
-                    
-                    // Update preference summary
-                    findPreference<Preference>(MotQotApplication.KEY_NOTIFICATION_TIME)?.summary =
-                        String.format("%02d:%02d", selectedHour, selectedMinute)
-                    
-                    // Schedule daily quote worker
-                    scheduleDailyQuoteWorker(selectedHour, selectedMinute)
-                },
-                hour,
-                minute,
-                true
-            ).show()
+            if (before(currentCalendar)) {
+                add(Calendar.DAY_OF_MONTH, 1)
+            }
         }
         
-        private fun scheduleDailyQuoteWorker(hour: Int, minute: Int) {
-            val calendar = Calendar.getInstance().apply {
-                set(Calendar.HOUR_OF_DAY, hour)
-                set(Calendar.MINUTE, minute)
-                set(Calendar.SECOND, 0)
-                set(Calendar.MILLISECOND, 0)
-            }
-            
-            // If the time has already passed today, schedule for tomorrow
-            val now = Calendar.getInstance()
-            if (calendar.before(now)) {
-                calendar.add(Calendar.DAY_OF_MONTH, 1)
-            }
-            
-            // Check notification permission if on Android 13+ 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && 
-                !MotQotApplication.hasNotificationPermission(requireContext())) {
-                // Inform user that notifications require permission
-                android.app.AlertDialog.Builder(requireContext())
-                    .setTitle(R.string.notification_permission_required)
-                    .setMessage(R.string.notification_permission_settings_message)
-                    .setPositiveButton(R.string.open_settings) { _, _ ->
-                        // Open app settings so user can enable notifications
-                        val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                        intent.data = android.net.Uri.fromParts("package", requireContext().packageName, null)
-                        startActivity(intent)
-                    }
-                    .setNegativeButton(R.string.cancel, null)
-                    .show()
-            }
-            
-            val initialDelay = calendar.timeInMillis - now.timeInMillis
-            
-            val inputData = Data.Builder()
-                .putInt("hour", hour)
-                .putInt("minute", minute)
-                .build()
-            
-            val dailyQuoteRequest = PeriodicWorkRequestBuilder<DailyQuoteWorker>(
-                24, TimeUnit.HOURS
-            )
-                .setInitialDelay(initialDelay, TimeUnit.MILLISECONDS)
-                .setInputData(inputData)
-                .build()
-            
-            WorkManager.getInstance(requireContext()).enqueueUniquePeriodicWork(
-                "daily_quote_work",
-                ExistingPeriodicWorkPolicy.REPLACE,
-                dailyQuoteRequest
-            )
-        }
+        val initialDelay = targetCalendar.timeInMillis - currentCalendar.timeInMillis
+        
+        // Schedule the worker
+        val workRequest = PeriodicWorkRequestBuilder<DailyQuoteWorker>(
+            24, TimeUnit.HOURS
+        )
+            .setInitialDelay(initialDelay, TimeUnit.MILLISECONDS)
+            .setInputData(data)
+            .build()
+        
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+            "daily_quote_work",
+            ExistingPeriodicWorkPolicy.REPLACE,
+            workRequest
+        )
+        
+        Log.d(TAG, "Scheduled notifications for $hour:$minute with initial delay ${initialDelay/1000/60} minutes")
+    }
+    
+    private fun cancelNotifications() {
+        WorkManager.getInstance(this).cancelUniqueWork("daily_quote_work")
+        Log.d(TAG, "Cancelled notifications")
+    }
+    
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.preference.PreferenceScreen
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<PreferenceCategory android:title="API Settings">
+	<PreferenceCategory
+		android:title="@string/api_settings">
 		<EditTextPreference
-			android:key="perplexity_api_key"
+			android:key="api_key"
 			android:title="@string/api_key_title"
 			android:summary="@string/api_key_summary"
-			android:dialogTitle="@string/api_key_dialog_title"
-			app:useSimpleSummaryProvider="false" />
+			android:dialogTitle="@string/api_key_dialog_title" />
 	</PreferenceCategory>
 
-	<PreferenceCategory android:title="Quote Settings">
-		<ListPreference
-			android:key="language_preference"
-			android:title="@string/language_title"
-			android:summary="@string/language_summary"
-			android:entries="@array/language_entries"
-			android:entryValues="@array/language_values"
-			android:defaultValue="en" />
-	</PreferenceCategory>
-
-	<PreferenceCategory android:title="Notification Settings">
+	<PreferenceCategory
+		android:title="@string/notifications">
 		<SwitchPreferenceCompat
 			android:key="enable_notifications"
 			android:title="@string/notification_title"
@@ -31,8 +23,7 @@
 		<Preference
 			android:key="notification_time"
 			android:title="@string/notification_time_title"
-			android:summary="@string/notification_time_summary"
-			android:dependency="enable_notifications" />
+			android:summary="@string/notification_time_summary" />
 	</PreferenceCategory>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

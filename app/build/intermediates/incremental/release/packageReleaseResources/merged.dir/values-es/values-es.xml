@@ -3,7 +3,7 @@
     <string name="api_key_dialog_title">Introducir clave API</string>
     <string name="api_key_summary">Introduce tu clave API de Perplexity para generar frases</string>
     <string name="api_key_title">Clave API de Perplexity</string>
-    <string name="app_name">MotQot</string>
+    <string name="app_name">motqot</string>
     <string name="cancel">Cancelar</string>
     <string name="error_api">Error al comunicarse con la API de Perplexity. Por favor, inténtalo más
 		tarde.</string>

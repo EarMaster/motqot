@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import rocks.wiedemann.motqot.databinding.ActivityMainBinding
@@ -36,10 +38,22 @@ class MainActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Use view binding properly
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
+        // Set up the toolbar
         setSupportActionBar(binding.toolbar)
+        
+        // Hide the default title
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        
+        // Set up settings button click listener
+        binding.btnSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
         
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         
@@ -77,27 +91,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-    
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> {
-                startActivity(Intent(this, SettingsActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-    
     override fun onResume() {
         super.onResume()
-        // Check if API key is set
-        if (!viewModel.isApiKeySet()) {
-            Toast.makeText(this, R.string.error_no_api_key, Toast.LENGTH_LONG).show()
-            startActivity(Intent(this, SettingsActivity::class.java))
+        if (viewModel.isApiConfigured()) {
+            viewModel.generateQuote()
+        } else {
+            Toast.makeText(this, R.string.error_incomplete_api_config, Toast.LENGTH_LONG).show()
+            // We'll let the user navigate to settings manually when needed
+            //startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
     
@@ -126,10 +127,10 @@ class MainActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         binding.btnGenerateQuote.setOnClickListener {
-            if (viewModel.isApiKeySet()) {
+            if (viewModel.isApiConfigured()) {
                 viewModel.generateQuote()
             } else {
-                Toast.makeText(this, R.string.error_no_api_key, Toast.LENGTH_LONG).show()
+                Toast.makeText(this, R.string.error_incomplete_api_config, Toast.LENGTH_LONG).show()
                 startActivity(Intent(this, SettingsActivity::class.java))
             }
         }

@@ -4,9 +4,9 @@
     minSdkVersion="23"
     targetSdkVersion="35"
     mergedManifest="build\intermediates\merged_manifest\release\processReleaseMainManifest\AndroidManifest.xml"
-    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.9.2;proguard-rules.pro"
+    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android-optimize.txt-8.10.0;proguard-rules.pro"
     partialResultsDir="build\intermediates\lint_vital_partial_results\release\lintVitalAnalyzeRelease\out"
-    desugaredMethodsFiles="D:\Users\nicow\.gradle\caches\8.11.1\transforms\f92f7147d086d7ba12a16e74161de701\transformed\D8BackportedDesugaredMethods.txt">
+    desugaredMethodsFiles="D:\Users\nicow\.gradle\caches\8.11.1\transforms\2dcfccafeaf8dc24cb6505e7d66f6e0b\transformed\D8BackportedDesugaredMethods.txt">
   <buildFeatures
       viewBinding="true"
       namespacing="REQUIRED"/>
@@ -27,6 +27,6 @@
       applicationId="rocks.wiedemann.motqot"
       generatedSourceFolders="build\generated\source\kapt\release;build\generated\ap_generated_sources\release\out;build\generated\data_binding_base_class_source_out\release\out"
       generatedResourceFolders="build\generated\res\resValues\release"
-      desugaredMethodsFiles="D:\Users\nicow\.gradle\caches\8.11.1\transforms\f92f7147d086d7ba12a16e74161de701\transformed\D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="D:\Users\nicow\.gradle\caches\8.11.1\transforms\2dcfccafeaf8dc24cb6505e7d66f6e0b\transformed\D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

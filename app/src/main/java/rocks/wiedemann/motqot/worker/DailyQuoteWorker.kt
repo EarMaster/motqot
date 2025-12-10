@@ -38,15 +38,17 @@ class DailyQuoteWorker(
                 return@withContext Result.success()
             }
             
-            // Check if API key is set
-            val apiKey = repository.getApiKey()
-            if (apiKey.isNullOrBlank()) {
-                Log.e(TAG, "API key not set")
+            // Check if the provider configuration is complete
+            if (!repository.hasCompleteApiConfig()) {
+                Log.e(TAG, "API provider configuration incomplete")
                 return@withContext Result.failure()
             }
             
-            // Generate a new quote
-            val quoteResult = repository.generateQuote()
+            // Get the preferred language
+            val language = repository.getLanguagePreference()
+            
+            // Generate a new quote with the preferred language
+            val quoteResult = repository.generateQuote(language)
             
             if (quoteResult.isSuccess) {
                 val quote = quoteResult.getOrNull()

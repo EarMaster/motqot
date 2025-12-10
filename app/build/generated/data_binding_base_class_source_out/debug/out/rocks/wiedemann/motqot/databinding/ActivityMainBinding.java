@@ -4,6 +4,8 @@ package rocks.wiedemann.motqot.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -12,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
@@ -24,7 +27,13 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final AppBarLayout appBarLayout;
+
+  @NonNull
   public final MaterialButton btnGenerateQuote;
+
+  @NonNull
+  public final ImageButton btnSettings;
 
   @NonNull
   public final MaterialButton btnShareQuote;
@@ -39,6 +48,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Toolbar toolbar;
 
   @NonNull
+  public final ImageView toolbarLogo;
+
+  @NonNull
   public final TextView tvDate;
 
   @NonNull
@@ -48,16 +60,20 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView tvQuoteTitle;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull MaterialButton btnGenerateQuote, @NonNull MaterialButton btnShareQuote,
+      @NonNull AppBarLayout appBarLayout, @NonNull MaterialButton btnGenerateQuote,
+      @NonNull ImageButton btnSettings, @NonNull MaterialButton btnShareQuote,
       @NonNull MaterialCardView cardQuote, @NonNull ProgressBar progressBar,
-      @NonNull Toolbar toolbar, @NonNull TextView tvDate, @NonNull TextView tvQuote,
-      @NonNull TextView tvQuoteTitle) {
+      @NonNull Toolbar toolbar, @NonNull ImageView toolbarLogo, @NonNull TextView tvDate,
+      @NonNull TextView tvQuote, @NonNull TextView tvQuoteTitle) {
     this.rootView = rootView;
+    this.appBarLayout = appBarLayout;
     this.btnGenerateQuote = btnGenerateQuote;
+    this.btnSettings = btnSettings;
     this.btnShareQuote = btnShareQuote;
     this.cardQuote = cardQuote;
     this.progressBar = progressBar;
     this.toolbar = toolbar;
+    this.toolbarLogo = toolbarLogo;
     this.tvDate = tvDate;
     this.tvQuote = tvQuote;
     this.tvQuoteTitle = tvQuoteTitle;
@@ -90,9 +106,21 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.appBarLayout;
+      AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
+      if (appBarLayout == null) {
+        break missingId;
+      }
+
       id = R.id.btnGenerateQuote;
       MaterialButton btnGenerateQuote = ViewBindings.findChildViewById(rootView, id);
       if (btnGenerateQuote == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_settings;
+      ImageButton btnSettings = ViewBindings.findChildViewById(rootView, id);
+      if (btnSettings == null) {
         break missingId;
       }
 
@@ -120,6 +148,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.toolbar_logo;
+      ImageView toolbarLogo = ViewBindings.findChildViewById(rootView, id);
+      if (toolbarLogo == null) {
+        break missingId;
+      }
+
       id = R.id.tvDate;
       TextView tvDate = ViewBindings.findChildViewById(rootView, id);
       if (tvDate == null) {
@@ -138,8 +172,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, btnGenerateQuote, btnShareQuote,
-          cardQuote, progressBar, toolbar, tvDate, tvQuote, tvQuoteTitle);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, appBarLayout, btnGenerateQuote,
+          btnSettings, btnShareQuote, cardQuote, progressBar, toolbar, toolbarLogo, tvDate, tvQuote,
+          tvQuoteTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

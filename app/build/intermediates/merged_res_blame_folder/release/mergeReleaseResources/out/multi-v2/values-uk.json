@@ -4,7 +4,24 @@
             "outputFile": "rocks.wiedemann.motqot.app-mergeReleaseResources-46:/values-uk/values-uk.xml",
             "map": [
                 {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\dea0c709b856427dcbf87ac7b6df8636\\transformed\\material-1.11.0\\res\\values-uk\\values-uk.xml",
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\70801bd020ddb11f8c72ed887d593209\\transformed\\core-1.12.0\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,155,257,358,459,564,669,782",
+                        "endColumns": "99,101,100,100,104,104,112,100",
+                        "endOffsets": "150,252,353,454,559,664,777,878"
+                    },
+                    "to": {
+                        "startLines": "40,41,42,43,44,45,46,115",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3591,3691,3793,3894,3995,4100,4205,9859",
+                        "endColumns": "99,101,100,100,104,104,112,100",
+                        "endOffsets": "3686,3788,3889,3990,4095,4200,4313,9955"
+                    }
+                },
+                {
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\15c835b5f849c79164f92d96fbe2acb4\\transformed\\material-1.11.0\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\88caf39869a9e3d52f21a0f0ee5e5f73\\transformed\\appcompat-1.6.1\\res\\values-uk\\values-uk.xml",
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\144de6ed54e2a9f8bb523745bed0669e\\transformed\\appcompat-1.6.1\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,24 +57,7 @@
                     }
                 },
                 {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\451a884b21359c39b63de5183bc8195d\\transformed\\core-1.12.0\\res\\values-uk\\values-uk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,155,257,358,459,564,669,782",
-                        "endColumns": "99,101,100,100,104,104,112,100",
-                        "endOffsets": "150,252,353,454,559,664,777,878"
-                    },
-                    "to": {
-                        "startLines": "40,41,42,43,44,45,46,115",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3591,3691,3793,3894,3995,4100,4205,9859",
-                        "endColumns": "99,101,100,100,104,104,112,100",
-                        "endOffsets": "3686,3788,3889,3990,4095,4200,4313,9955"
-                    }
-                },
-                {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\fb12fc08d3d40cd88252ac33917acd91\\transformed\\preference-1.2.1\\res\\values-uk\\values-uk.xml",
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\676d2bb5c553614abc1ed348f1dce24b\\transformed\\preference-1.2.1\\res\\values-uk\\values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

@@ -4,7 +4,7 @@
     name=":app"
     type="APP"
     maven="MotQot:app:unspecified"
-    agpVersion="8.9.2"
+    agpVersion="8.10.0"
     buildFolder="build"
     bootClassPath="D:\Users\nicow\AppData\Local\Android\Sdk\platforms\android-35\android.jar;D:\Users\nicow\AppData\Local\Android\Sdk\build-tools\35.0.0\core-lambda-stubs.jar"
     javaSourceLevel="17"

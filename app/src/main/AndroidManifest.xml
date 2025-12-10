@@ -12,7 +12,6 @@
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
-		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/Theme.MotQot">
 
@@ -27,11 +26,21 @@
 
 		<activity
 			android:name=".SettingsActivity"
-			android:label="@string/settings_title"
-			android:parentActivityName=".MainActivity"
-			android:exported="false" />
+			android:theme="@style/Theme.MotQot.Settings"
+			android:label="@string/settings"
+			android:parentActivityName=".MainActivity">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value=".MainActivity" />
+		</activity>
 
-			<!-- Disable automatic WorkManager initialization -->
+		<activity
+			android:name=".SettingsActivity"
+			android:label="@string/settings"
+			android:theme="@style/Theme.MotQot"
+			android:parentActivityName=".MainActivity" />
+
+		<!-- Disable automatic WorkManager initialization -->
 		<provider
 			android:name="androidx.startup.InitializationProvider"
 			android:authorities="${applicationId}.androidx-startup"

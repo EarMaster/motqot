@@ -5,11 +5,16 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:fitsSystemWindows="true"
+	android:background="?attr/colorSurface"
+	app:layout_anchorGravity="center"
 	tools:context=".MainActivity">
 
 	<com.google.android.material.appbar.AppBarLayout
+		android:id="@+id/appBarLayout"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:fitsSystemWindows="true"
 		android:theme="@style/Theme.MotQot">
 
 		<androidx.appcompat.widget.Toolbar
@@ -17,8 +22,42 @@
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
 			android:background="?attr/colorPrimary"
-			app:popupTheme="@style/Theme.MotQot" />
+			app:contentInsetStart="0dp"
+			app:contentInsetStartWithNavigation="0dp"
+			app:layout_scrollFlags="scroll|enterAlways"
+			app:popupTheme="@style/PopupOverlay">
 
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+				<ImageView
+					android:id="@+id/toolbar_logo"
+					android:layout_width="138dp"
+					android:layout_height="36dp"
+					android:layout_alignParentStart="true"
+					android:layout_alignParentTop="true"
+					android:layout_alignParentBottom="true"
+					android:layout_marginStart="8dp"
+					android:adjustViewBounds="true"
+					android:contentDescription="@string/app_name"
+					android:maxWidth="180dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/motqot_title"
+					android:tint="#FFFFFF" />
+
+				<ImageButton
+					android:id="@+id/btn_settings"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_alignParentEnd="true"
+					android:layout_centerVertical="true"
+					android:layout_marginEnd="8dp"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:contentDescription="@string/settings"
+					android:src="@drawable/ic_settings" />
+			</RelativeLayout>
+		</androidx.appcompat.widget.Toolbar>
 	</com.google.android.material.appbar.AppBarLayout>
 
 	<androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +73,7 @@
 			android:text="@string/quote_of_the_day"
 			android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
 			android:textStyle="bold"
+			android:textColor="?attr/colorOnSurface"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -82,7 +122,7 @@
 					android:layout_height="wrap_content"
 					android:layout_marginTop="8dp"
 					android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-					android:textColor="@color/darkGray"
+					android:textColor="?attr/colorOnSurface"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintTop_toBottomOf="@+id/tvQuote"
 					tools:text="May 5, 2025" />

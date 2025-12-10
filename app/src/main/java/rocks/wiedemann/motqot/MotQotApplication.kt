@@ -15,7 +15,7 @@ class MotQotApplication : Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
-        // No need to manually initialize WorkManager, it will use the configuration from the provider
+        // Any initialization code can go here
     }
 
     override val workManagerConfiguration: Configuration
@@ -40,10 +40,15 @@ class MotQotApplication : Application(), Configuration.Provider {
 
     companion object {
         const val CHANNEL_ID = "motqot_quotes_channel"
-        const val PREFS_NAME = "motqot_preferences"
-        const val KEY_API_KEY = "perplexity_api_key"
+        const val PREFS_NAME = "motqot_prefs"
+        const val KEY_API_KEY = "api_key"
+        const val KEY_API_BASE_URL = "api_base_url"
+        const val KEY_API_MODEL = "api_model"
+        const val KEY_PROVIDER_PRESET = "provider_preset"
         const val KEY_LANGUAGE = "language_preference"
         const val KEY_ENABLE_NOTIFICATIONS = "enable_notifications"
+        const val KEY_NOTIFICATION_HOUR = "notification_hour"
+        const val KEY_NOTIFICATION_MINUTE = "notification_minute"
         const val KEY_NOTIFICATION_TIME = "notification_time"
         const val KEY_LAST_QUOTE = "last_quote"
         const val KEY_LAST_QUOTE_DATE = "last_quote_date"

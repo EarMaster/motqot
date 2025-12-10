@@ -4,17 +4,7 @@
             "outputFile": "rocks.wiedemann.motqot.app-mergeDebugResources-46:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\451a884b21359c39b63de5183bc8195d\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\88caf39869a9e3d52f21a0f0ee5e5f73\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\144de6ed54e2a9f8bb523745bed0669e\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "D:\\Users\\nicow\\.gradle\\caches\\8.11.1\\transforms\\70801bd020ddb11f8c72ed887d593209\\transformed\\core-1.12.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

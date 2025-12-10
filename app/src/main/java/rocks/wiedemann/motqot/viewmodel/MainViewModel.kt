@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import rocks.wiedemann.motqot.model.Quote
 import rocks.wiedemann.motqot.repository.QuoteRepository
+import rocks.wiedemann.motqot.R
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -38,38 +39,35 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun loadLastQuote() {
         val lastQuote = repository.getLastQuote()
         _quote.value = lastQuote
-        
-        // If there's no saved quote or we should generate a new one for today
-        if (lastQuote == null || repository.shouldGenerateNewQuote()) {
-            generateQuote()
-        }
     }
     
     /**
      * Generate a new quote
      */
     fun generateQuote() {
-        val apiKey = repository.getApiKey()
-        if (apiKey.isNullOrBlank()) {
-            _error.value = "API key not set"
-            return
-        }
+        if (_isLoading.value == true) return
         
         _isLoading.value = true
         _error.value = null
         
         viewModelScope.launch {
-            repository.generateQuote()
-                .onSuccess { quote ->
-                    _quote.postValue(quote)
-                    repository.saveQuote(quote)
-                    _error.postValue(null)
+            try {
+                // Get the preferred language from repository
+                val language = repository.getLanguagePreference()
+                
+                val result = repository.generateQuote(language)
+                if (result.isSuccess) {
+                    _quote.value = result.getOrNull()
+                } else {
+                    _error.value = result.exceptionOrNull()?.message
+                        ?: getApplication<Application>().getString(R.string.error_generating_quote)
                 }
-                .onFailure { exception ->
-                    _error.postValue(exception.message)
-                }
-            
-            _isLoading.postValue(false)
+            } catch (e: Exception) {
+                _error.value = e.message
+                    ?: getApplication<Application>().getString(R.string.error_generating_quote)
+            } finally {
+                _isLoading.value = false
+            }
         }
     }
     
@@ -82,9 +80,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
     
     /**
-     * Check if the API key is set
+     * Check if the provider configuration is ready
      */
-    fun isApiKeySet(): Boolean {
-        return !repository.getApiKey().isNullOrBlank()
+    fun isApiConfigured(): Boolean {
+        return repository.hasCompleteApiConfig()
     }
 }

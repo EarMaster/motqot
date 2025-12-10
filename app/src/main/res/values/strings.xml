@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">MotQot</string>
+	<string name="app_name">motqot</string>
 	<string name="settings_title">Settings</string>
 
 	<!-- Main Screen -->
@@ -12,9 +12,22 @@
 	<string name="settings">Settings</string>
 
 	<!-- Settings Screen -->
-	<string name="api_key_title">Perplexity API Key</string>
-	<string name="api_key_summary">Enter your Perplexity API key to generate quotes</string>
+	<string name="api_key_title">API Key</string>
+	<string name="api_key_summary">Enter the API key for your selected provider</string>
 	<string name="api_key_dialog_title">Enter API Key</string>
+	<string name="api_key_set">API key is set</string>
+	<string name="provider_preset_title">Provider Preset</string>
+	<string name="provider_preset_summary">Choose a preset to autofill the base URL and model</string>
+	<string name="api_base_url_title">API Base URL</string>
+	<string name="api_base_url_summary">Enter the base URL of your OpenAI-compatible endpoint</string>
+	<string name="api_model_title">Model</string>
+	<string name="api_model_summary">Enter the model name to use for quote generation</string>
+	<string name="provider_preset_openai">OpenAI</string>
+	<string name="provider_preset_openrouter">OpenRouter</string>
+	<string name="provider_preset_anthropic">Anthropic</string>
+	<string name="provider_preset_mistral">Mistral</string>
+	<string name="provider_preset_perplexity">Perplexity</string>
+	<string name="provider_preset_custom">Custom</string>
 	<string name="save">Save</string>
 	<string name="cancel">Cancel</string>
 	<string name="language_title">Language</string>
@@ -24,10 +37,16 @@
 	<string name="notification_time_title">Notification Time</string>
 	<string name="notification_time_summary">Set the time to receive daily quotes</string>
 
+	<!-- Settings Categories -->
+	<string name="api_settings">API Settings</string>
+	<string name="notifications">Notifications</string>
+
 	<!-- Error Messages -->
-	<string name="error_no_api_key">Please enter your Perplexity API key in settings</string>
+	<string name="error_no_api_key">Please enter your API key in settings</string>
+	<string name="error_incomplete_api_config">Please complete your provider configuration (API key, URL, and model) in settings</string>
 	<string name="error_network">Network error. Please check your connection and try again.</string>
-	<string name="error_api">Error communicating with Perplexity API. Please try again later.</string>
+	<string name="error_api">Error communicating with the configured API. Please try again later.</string>
+	<string name="error_generating_quote">Failed to generate quote. Please try again later.</string>
 
 	<!-- Notifications -->
 	<string name="notification_channel_name">Daily Quotes</string>
@@ -37,9 +56,12 @@
 
 	<!-- Notification Permissions -->
 	<string name="notification_permission_granted">Notification permission granted</string>
-	<string name="notification_permission_denied">Notification permission denied. You won\'t receive daily quotes.</string>
-	<string name="notification_permission_rationale">Notification permission is needed to deliver your daily motivational quotes.</string>
+	<string name="notification_permission_denied">Notification permission denied. You won\'t receive
+		daily quotes.</string>
+	<string name="notification_permission_rationale">Notification permission is needed to deliver
+		your daily motivational quotes.</string>
 	<string name="notification_permission_required">Notification Permission Required</string>
-	<string name="notification_permission_settings_message">Daily notifications require permission to display. Please enable notifications in app settings to receive your daily quotes.</string>
+	<string name="notification_permission_settings_message">Daily notifications require permission
+		to display. Please enable notifications in app settings to receive your daily quotes.</string>
 	<string name="open_settings">Open Settings</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">MotQot</string>
+	<string name="app_name">motqot</string>
 	<string name="settings_title">Einstellungen</string>
 
 	<!-- Main Screen -->
@@ -12,9 +12,22 @@
 	<string name="settings">Einstellungen</string>
 
 	<!-- Settings Screen -->
-	<string name="api_key_title">Perplexity API-Schlüssel</string>
-	<string name="api_key_summary">Gib deinen Perplexity API-Schlüssel ein, um Zitate zu generieren</string>
+	<string name="api_key_title">API-Schlüssel</string>
+	<string name="api_key_summary">Gib den API-Schlüssel für deinen ausgewählten Anbieter ein</string>
 	<string name="api_key_dialog_title">API-Schlüssel eingeben</string>
+	<string name="api_key_set">API-Schlüssel ist gesetzt</string>
+	<string name="provider_preset_title">Anbieter-Preset</string>
+	<string name="provider_preset_summary">Wähle ein Preset, um Basis-URL und Modell automatisch zu füllen</string>
+	<string name="api_base_url_title">API-Basis-URL</string>
+	<string name="api_base_url_summary">Gib die Basis-URL deines OpenAI-kompatiblen Endpunkts ein</string>
+	<string name="api_model_title">Modell</string>
+	<string name="api_model_summary">Gib den Modellnamen für die Zitaterstellung ein</string>
+	<string name="provider_preset_openai">OpenAI</string>
+	<string name="provider_preset_openrouter">OpenRouter</string>
+	<string name="provider_preset_anthropic">Anthropic</string>
+	<string name="provider_preset_mistral">Mistral</string>
+	<string name="provider_preset_perplexity">Perplexity</string>
+	<string name="provider_preset_custom">Individuell</string>
 	<string name="save">Speichern</string>
 	<string name="cancel">Abbrechen</string>
 	<string name="language_title">Sprache</string>
@@ -23,13 +36,17 @@
 	<string name="notification_summary">Erhalte täglich ein neues motivierendes Zitat</string>
 	<string name="notification_time_title">Benachrichtigungszeit</string>
 	<string name="notification_time_summary">Lege die Zeit für tägliche Zitate fest</string>
+	<string name="api_settings">API-Einstellungen</string>
+	<string name="notifications">Benachrichtigungen</string>
 
 	<!-- Error Messages -->
-	<string name="error_no_api_key">Bitte gib deinen Perplexity API-Schlüssel in den Einstellungen
-		ein</string>
+	<string name="error_no_api_key">Bitte gib deinen API-Schlüssel in den Einstellungen ein</string>
+	<string name="error_incomplete_api_config">Bitte vervollständige deine Anbieter-Konfiguration (API-Schlüssel, URL und Modell) in den Einstellungen</string>
 	<string name="error_network">Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es
 		erneut.</string>
-	<string name="error_api">Fehler bei der Kommunikation mit der Perplexity API. Bitte versuche es
+	<string name="error_api">Fehler bei der Kommunikation mit der konfigurierten API. Bitte versuche es
+		später erneut.</string>
+	<string name="error_generating_quote">Zitat konnte nicht generiert werden. Bitte versuche es
 		später erneut.</string>
 
 	<!-- Notifications -->

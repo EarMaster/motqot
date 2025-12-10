@@ -1,46 +1,222 @@
 [
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_activity_settings.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/drawable_ic_motqot_foreground.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/drawable/ic_motqot_foreground.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xxhdpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xxhdpi\\motqot.png"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/drawable_motqot.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/drawable/motqot.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-hdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/xml_preferences.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/xml/preferences.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_ic_arrow_back.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\ic_arrow_back.xml"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/font_roboto_regular.ttf.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/font/roboto_regular.ttf"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-mdpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-mdpi\\motqot_title.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-anydpi-v24_motqot_title.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-anydpi-v24\\motqot_title.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xhdpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xhdpi\\motqot_title.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\xml_preferences.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\xml\\preferences.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxhdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\font_roboto_regular.ttf.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\font\\roboto_regular.ttf"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xxxhdpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xxxhdpi\\motqot.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_motqot_text.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\motqot_text.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xhdpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xhdpi\\motqot.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxxhdpi_ic_launcher_monochrome.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxxhdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_ic_motqot_foreground.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\ic_motqot_foreground.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-mdpi_ic_launcher_monochrome.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-mdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_motqot.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\motqot.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-hdpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-hdpi\\motqot_title.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xxhdpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xxhdpi\\motqot_title.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_activity_settings_custom.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\activity_settings_custom.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-mdpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-mdpi\\motqot.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_motqot_flower.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\motqot_flower.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\font_roboto.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\font\\roboto.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\menu_menu_main.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-hdpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-hdpi\\motqot.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_motqot_logo.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\motqot_logo.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-xxxhdpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-xxxhdpi\\motqot_title.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_dialog_edit_text.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\dialog_edit_text.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xhdpi_ic_launcher_monochrome.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xhdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-hdpi_ic_launcher_monochrome.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-hdpi\\ic_launcher_monochrome.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_preference_category.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\preference_category.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "rocks.wiedemann.motqot.app-debug-48:/xml_basic_preferences.xml.flat",
+        "source": "rocks.wiedemann.motqot.app-main-50:/xml/basic_preferences.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-ldpi_motqot.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-ldpi\\motqot.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-anydpi-v24_motqot.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-anydpi-v24\\motqot.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_activity_main.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable_ic_settings.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\drawable-ldpi_motqot_title.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-pngs-44:\\drawable-ldpi\\motqot_title.png"
     },
     {
         "merged": "rocks.wiedemann.motqot.app-debug-48:/layout_activity_settings.xml.flat",
         "source": "rocks.wiedemann.motqot.app-main-50:/layout/activity_settings.xml"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/layout_activity_main.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/layout/activity_main.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\layout_preference_category_custom.xml.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\layout\\preference_category_custom.xml"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/drawable/ic_launcher_foreground.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-mdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/font_roboto.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/font/roboto.xml"
-    },
-    {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
-        "merged": "rocks.wiedemann.motqot.app-debug-48:/menu_menu_main.xml.flat",
-        "source": "rocks.wiedemann.motqot.app-main-50:/menu/menu_main.xml"
+        "merged": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-debug-48:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\Users\\nicow\\.gradle\\daemon\\8.11.1\\rocks.wiedemann.motqot.app-main-50:\\mipmap-hdpi\\ic_launcher.png"
     }
 ]

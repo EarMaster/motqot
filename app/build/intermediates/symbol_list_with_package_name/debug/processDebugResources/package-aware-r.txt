@@ -334,6 +334,7 @@ attr color
 attr colorAccent
 attr colorBackgroundFloating
 attr colorButtonNormal
+attr colorCardBackground
 attr colorContainer
 attr colorControlActivated
 attr colorControlHighlight
@@ -391,6 +392,9 @@ attr colorTertiary
 attr colorTertiaryContainer
 attr colorTertiaryFixed
 attr colorTertiaryFixedDim
+attr colorTextOnCard
+attr colorTextPrimary
+attr colorTextSecondary
 attr commitIcon
 attr compatShadowEnabled
 attr constraintRotate
@@ -1442,6 +1446,7 @@ color button_material_dark
 color button_material_light
 color call_notification_answer_color
 color call_notification_decline_color
+color cardBackground
 color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
@@ -2178,6 +2183,7 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color textOnCard
 color tooltip_background_dark
 color tooltip_background_light
 color white
@@ -3078,6 +3084,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_arrow_back
 drawable ic_arrow_back_black_24
 drawable ic_arrow_down_24dp
 drawable ic_call_answer
@@ -3099,6 +3106,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_settings
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3121,6 +3129,8 @@ drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
 drawable motqot
+drawable motqot_flower
+drawable motqot_title
 drawable mtrl_bottomsheet_drag_handle
 drawable mtrl_checkbox_button
 drawable mtrl_checkbox_button_checked_unchecked
@@ -3260,6 +3270,8 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id api_key_summary
+id appBarLayout
 id arc
 id asConfigured
 id async
@@ -3280,11 +3292,15 @@ id bounceEnd
 id bounceStart
 id btnGenerateQuote
 id btnShareQuote
+id btn_settings
 id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
 id cardQuote
+id card_api_key
+id card_language
+id card_notification_time
 id carryVelocity
 id center
 id centerCrop
@@ -3355,6 +3371,7 @@ id easeOut
 id east
 id edge
 id edit_query
+id edit_text
 id edit_text_id
 id elastic
 id embed
@@ -3415,6 +3432,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id language_summary
 id layout
 id left
 id leftToRight
@@ -3504,6 +3522,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_time_summary
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3624,6 +3643,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id switchWidget
+id switch_notifications
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3647,6 +3667,7 @@ id textStart
 id textTop
 id text_input_end_icon
 id text_input_error_icon
+id text_input_layout
 id text_input_start_icon
 id textinput_counter
 id textinput_error
@@ -3660,6 +3681,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar_logo
 id top
 id topPanel
 id touch_outside
@@ -3815,6 +3837,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_settings
+layout activity_settings_custom
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3831,6 +3854,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_edit_text
 layout expand_button
 layout image_frame
 layout ime_base_split_test_activity
@@ -3894,6 +3918,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout preference
 layout preference_category
+layout preference_category_custom
 layout preference_category_material
 layout preference_dialog_edittext
 layout preference_dropdown
@@ -3914,7 +3939,9 @@ layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu menu_main
 mipmap ic_launcher
-mipmap ic_launcher_round
+mipmap ic_launcher_background
+mipmap ic_launcher_foreground
+mipmap ic_launcher_monochrome
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -3945,8 +3972,10 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string androidx_startup
 string api_key_dialog_title
+string api_key_set
 string api_key_summary
 string api_key_title
+string api_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -3970,6 +3999,7 @@ string clear_text_end_icon_content_description
 string copy
 string error_a11y_label
 string error_api
+string error_generating_quote
 string error_icon_content_description
 string error_network
 string error_no_api_key
@@ -4098,6 +4128,7 @@ string notification_time_summary
 string notification_time_title
 string notification_title
 string notification_title_text
+string notifications
 string open_settings
 string password_toggle_content_description
 string path_password_eye
@@ -4123,6 +4154,7 @@ string v7_preference_off
 string v7_preference_on
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
+style AlertDialogTheme
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
@@ -4132,6 +4164,7 @@ style Animation_Material3_SideSheetDialog
 style Animation_Material3_SideSheetDialog_Left
 style Animation_Material3_SideSheetDialog_Right
 style Animation_MaterialComponents_BottomSheetDialog
+style AppBarOverlay
 style AppButtonStyle
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
@@ -4433,6 +4466,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style NegativeButtonStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -4447,8 +4481,11 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style PopupOverlay
+style PositiveButtonStyle
 style Preference
 style Preference_Category
+style Preference_Category_Basic
 style Preference_Category_Material
 style Preference_CheckBoxPreference
 style Preference_CheckBoxPreference_Material
@@ -4476,6 +4513,7 @@ style PreferenceFragmentList
 style PreferenceFragmentList_Material
 style PreferenceSummaryTextStyle
 style PreferenceThemeOverlay
+style PreferenceThemeOverlay_FixedMaterial
 style PreferenceThemeOverlay_v14
 style PreferenceThemeOverlay_v14_Material
 style QuoteCardStyle
@@ -4497,6 +4535,10 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style SafeTextView
+style SafeTextView_Caption
+style SafeTextView_Category
+style SafeTextView_Subtitle1
 style ShapeAppearance_M3_Comp_Badge_Large_Shape
 style ShapeAppearance_M3_Comp_Badge_Shape
 style ShapeAppearance_M3_Comp_BottomAppBar_Container_Shape
@@ -4559,6 +4601,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style SplashTheme
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -4676,6 +4719,8 @@ style TextAppearance_MaterialComponents_Subtitle1
 style TextAppearance_MaterialComponents_Subtitle2
 style TextAppearance_MaterialComponents_TimePicker_Title
 style TextAppearance_MaterialComponents_Tooltip
+style TextAppearance_PreferenceCategoryTitle
+style TextAppearance_PreferenceCategoryTitle_Dark
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
@@ -4782,6 +4827,7 @@ style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_MotQot
+style Theme_MotQot_Settings
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark
@@ -4896,6 +4942,8 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style TimePickerDialogTheme
+style TimePickerStyle
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

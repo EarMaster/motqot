@@ -13,4 +13,22 @@
 		<item>fr</item>
 		<item>es</item>
 	</string-array>
+
+	<string-array name="provider_preset_entries">
+		<item>@string/provider_preset_openai</item>
+		<item>@string/provider_preset_openrouter</item>
+		<item>@string/provider_preset_anthropic</item>
+		<item>@string/provider_preset_mistral</item>
+		<item>@string/provider_preset_perplexity</item>
+		<item>@string/provider_preset_custom</item>
+	</string-array>
+
+	<string-array name="provider_preset_values">
+		<item>openai</item>
+		<item>openrouter</item>
+		<item>anthropic</item>
+		<item>mistral</item>
+		<item>perplexity</item>
+		<item>custom</item>
+	</string-array>
 </resources>

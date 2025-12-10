@@ -5,7 +5,9 @@ import android.content.SharedPreferences
 import android.util.Log
 import com.google.gson.Gson
 import rocks.wiedemann.motqot.MotQotApplication
-import rocks.wiedemann.motqot.api.PerplexityApiClient
+import rocks.wiedemann.motqot.R
+import rocks.wiedemann.motqot.api.ApiProviderConfig
+import rocks.wiedemann.motqot.api.OpenAiCompatibleClient
 import rocks.wiedemann.motqot.model.Quote
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -17,7 +19,7 @@ import java.util.Locale
 class QuoteRepository(private val context: Context) {
     private val TAG = "QuoteRepository"
     
-    private val apiClient = PerplexityApiClient()
+    private val apiClient = OpenAiCompatibleClient()
     private val gson = Gson()
     
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
@@ -36,6 +38,16 @@ class QuoteRepository(private val context: Context) {
      */
     fun getLanguage(): String {
         return sharedPreferences.getString(MotQotApplication.KEY_LANGUAGE, "en") ?: "en"
+    }
+    
+    /**
+     * Get the user's preferred language for quotes
+     */
+    fun getLanguagePreference(): String {
+        return sharedPreferences.getString(
+            "language_preference",  // Make sure this matches your preferences.xml key
+            "en"  // Default to English
+        ) ?: "en"
     }
     
     /**
@@ -73,17 +85,36 @@ class QuoteRepository(private val context: Context) {
             .apply()
     }
     
+    fun hasCompleteApiConfig(): Boolean = buildApiConfig() != null
+
     /**
-     * Generate a new quote using the Perplexity API
+     * Generate a new quote using the configured provider
      */
-    suspend fun generateQuote(): Result<Quote> {
-        val apiKey = getApiKey()
-        if (apiKey.isNullOrBlank()) {
-            return Result.failure(Exception("API key not set"))
+    suspend fun generateQuote(language: String = "en"): Result<Quote> {
+        val config = buildApiConfig()
+            ?: return Result.failure(Exception(context.getString(R.string.error_incomplete_api_config)))
+
+        return try {
+            apiClient.generateMotivationalQuote(config, language)
+        } catch (e: Exception) {
+            Result.failure(e)
         }
-        
-        val language = getLanguage()
-        return apiClient.generateMotivationalQuote(apiKey, language)
+    }
+
+    private fun buildApiConfig(): ApiProviderConfig? {
+        val apiKey = getApiKey()
+        val baseUrl = sharedPreferences.getString(MotQotApplication.KEY_API_BASE_URL, null)
+        val model = sharedPreferences.getString(MotQotApplication.KEY_API_MODEL, null)
+
+        if (apiKey.isNullOrBlank() || baseUrl.isNullOrBlank() || model.isNullOrBlank()) {
+            return null
+        }
+
+        return ApiProviderConfig(
+            baseUrl = baseUrl,
+            apiKey = apiKey,
+            model = model
+        )
     }
     
     /**
