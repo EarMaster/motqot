@@ -175,7 +175,9 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         Log.d(TAG, "Cancelled notifications")
     }
     
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (sharedPreferences == null || key == null) return
+        
         when (key) {
             MotQotApplication.KEY_API_KEY,
             MotQotApplication.KEY_LANGUAGE,
