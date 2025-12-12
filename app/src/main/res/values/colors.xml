@@ -11,4 +11,8 @@
 	<color name="darkGray">#757575</color>
 	<color name="quoteBackground">#F8F9FA</color>
 	<color name="errorRed">#F44336</color>
+	
+	<!-- Card colors -->
+	<color name="cardBackground">#FFFFFF</color>
+	<color name="textOnCard">#000000</color>
 </resources>

@@ -11,6 +11,7 @@
   <androidx.ads/>
   <androidx.annotation/>
   <androidx.appcompat/>
+  <androidx.appfunctions/>
   <androidx.appsearch/>
   <androidx.arch.core/>
   <androidx.asynclayoutinflater/>
@@ -24,6 +25,7 @@
   <androidx.bluetooth/>
   <androidx.browser/>
   <androidx.camera/>
+  <androidx.camera.featurecombinationquery/>
   <androidx.camera.media3/>
   <androidx.camera.viewfinder/>
   <androidx.car/>
@@ -46,6 +48,7 @@
   <androidx.core/>
   <androidx.core.uwb/>
   <androidx.credentials/>
+  <androidx.credentials.providerevents/>
   <androidx.credentials.registry/>
   <androidx.cursoradapter/>
   <androidx.customview/>
@@ -89,11 +92,14 @@
   <androidx.navigation/>
   <androidx.navigation.safeargs/>
   <androidx.navigation.safeargs.kotlin/>
+  <androidx.navigation3/>
+  <androidx.navigationevent/>
   <androidx.paging/>
   <androidx.palette/>
   <androidx.pdf/>
   <androidx.percentlayout/>
   <androidx.performance/>
+  <androidx.photopicker/>
   <androidx.preference/>
   <androidx.print/>
   <androidx.privacysandbox.activity/>
@@ -124,6 +130,7 @@
   <androidx.test.janktesthelper/>
   <androidx.test.services/>
   <androidx.test.uiautomator/>
+  <androidx.text/>
   <androidx.textclassifier/>
   <androidx.tracing/>
   <androidx.transition/>
@@ -139,6 +146,8 @@
   <androidx.wear.protolayout/>
   <androidx.wear.tiles/>
   <androidx.wear.watchface/>
+  <androidx.wear.watchfacepush/>
+  <androidx.webgpu/>
   <androidx.webkit/>
   <androidx.window/>
   <androidx.window.extensions.core/>
@@ -146,6 +155,8 @@
   <androidx.xr.arcore/>
   <androidx.xr.compose/>
   <androidx.xr.compose.material3/>
+  <androidx.xr.glimmer/>
+  <androidx.xr.projected/>
   <androidx.xr.runtime/>
   <androidx.xr.scenecore/>
   <com.android/>
@@ -155,6 +166,7 @@
   <com.android.asset-pack/>
   <com.android.asset-pack-bundle/>
   <com.android.billingclient/>
+  <com.android.built-in-kotlin/>
   <com.android.car.setupwizardlib/>
   <com.android.car.ui/>
   <com.android.compose.screenshot/>
@@ -162,6 +174,7 @@
   <com.android.designcompose/>
   <com.android.dynamic-feature/>
   <com.android.experimental.built-in-kotlin/>
+  <com.android.extensions.xr/>
   <com.android.fused-library/>
   <com.android.identity/>
   <com.android.installreferrer/>
@@ -205,6 +218,7 @@
   <com.android.tools.external.org-jetbrains/>
   <com.android.tools.fakeadbserver/>
   <com.android.tools.internal.build.test/>
+  <com.android.tools.journeys/>
   <com.android.tools.layoutlib/>
   <com.android.tools.lint/>
   <com.android.tools.metalava/>
@@ -220,6 +234,7 @@
   <com.google.ai.client.generativeai/>
   <com.google.ai.edge.aicore/>
   <com.google.ai.edge.litert/>
+  <com.google.ai.edge.litertlm/>
   <com.google.ai.edge.localagents/>
   <com.google.ambient.crossdevice/>
   <com.google.android.ads/>
@@ -235,6 +250,7 @@
   <com.google.android.flexbox/>
   <com.google.android.games/>
   <com.google.android.gms/>
+  <com.google.android.gms.oss-licenses-plugin/>
   <com.google.android.gms.strict-version-matcher-plugin/>
   <com.google.android.instantapps/>
   <com.google.android.instantapps.thirdpartycompat/>
@@ -266,6 +282,7 @@
   <com.google.android.tv.tvpanelframework/>
   <com.google.android.ump/>
   <com.google.android.wearable/>
+  <com.google.android.wearable.watchface.validator/>
   <com.google.androidbrowserhelper/>
   <com.google.ar/>
   <com.google.ar.sceneform/>
@@ -290,6 +307,7 @@
   <com.google.mlkit/>
   <com.google.net.cronet/>
   <com.google.oboe/>
+  <com.google.play.policy.insights/>
   <com.google.prefab/>
   <com.google.relay/>
   <com.google.test.platform/>

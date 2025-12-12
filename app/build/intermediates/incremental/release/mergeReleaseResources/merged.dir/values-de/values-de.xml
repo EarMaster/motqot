@@ -31,9 +31,15 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Teilen mit"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Mit <ns1:g id="APPLICATION_NAME">%s</ns1:g> teilen"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <string name="api_base_url_summary">Gib die Basis-URL deines OpenAI-kompatiblen Endpunkts ein</string>
+    <string name="api_base_url_title">API-Basis-URL</string>
     <string name="api_key_dialog_title">API-Schlüssel eingeben</string>
-    <string name="api_key_summary">Gib deinen Perplexity API-Schlüssel ein, um Zitate zu generieren</string>
-    <string name="api_key_title">Perplexity API-Schlüssel</string>
+    <string name="api_key_set">API-Schlüssel ist gesetzt</string>
+    <string name="api_key_summary">Gib den API-Schlüssel für deinen ausgewählten Anbieter ein</string>
+    <string name="api_key_title">API-Schlüssel</string>
+    <string name="api_model_summary">Gib den Modellnamen für die Zitaterstellung ein</string>
+    <string name="api_model_title">Modell</string>
+    <string name="api_settings">API-Einstellungen</string>
     <string name="app_name">motqot</string>
     <string name="bottomsheet_action_collapse">Ansicht am unteren Rand minimieren</string>
     <string name="bottomsheet_action_expand">Ansicht am unteren Rand maximieren</string>
@@ -52,13 +58,15 @@
     <string name="character_counter_overflowed_content_description">Zeichenbeschränkung überschritten: %1$d/%2$d</string>
     <string name="clear_text_end_icon_content_description">Text löschen</string>
     <string msgid="6083905920877235314" name="copy">"Kopieren"</string>
-    <string name="error_api">Fehler bei der Kommunikation mit der Perplexity API. Bitte versuche es
+    <string name="error_api">Fehler bei der Kommunikation mit der konfigurierten API. Bitte versuche es
+		später erneut.</string>
+    <string name="error_generating_quote">Zitat konnte nicht generiert werden. Bitte versuche es
 		später erneut.</string>
     <string name="error_icon_content_description">Fehler</string>
+    <string name="error_incomplete_api_config">Bitte vervollständige deine Anbieter-Konfiguration (API-Schlüssel, URL und Modell) in den Einstellungen</string>
     <string name="error_network">Netzwerkfehler. Bitte überprüfe deine Verbindung und versuche es
 		erneut.</string>
-    <string name="error_no_api_key">Bitte gib deinen Perplexity API-Schlüssel in den Einstellungen
-		ein</string>
+    <string name="error_no_api_key">Bitte gib deinen API-Schlüssel in den Einstellungen ein</string>
     <string msgid="2427401033573778270" name="expand_button_title">"Erweitert"</string>
     <string name="exposed_dropdown_menu_content_description">Drop-down-Menü anzeigen</string>
     <string name="generate_new_quote">Neues Zitat generieren</string>
@@ -140,9 +148,18 @@
     <string name="notification_time_title">Benachrichtigungszeit</string>
     <string name="notification_title">Tägliche Benachrichtigungen</string>
     <string name="notification_title_text">Deine tägliche Motivation</string>
+    <string name="notifications">Benachrichtigungen</string>
     <string name="open_settings">Einstellungen öffnen</string>
     <string name="password_toggle_content_description">Passwort anzeigen</string>
     <string msgid="6685851473431805375" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" in Zwischenablage kopiert."</string>
+    <string name="provider_preset_anthropic">Anthropic</string>
+    <string name="provider_preset_custom">Individuell</string>
+    <string name="provider_preset_mistral">Mistral</string>
+    <string name="provider_preset_openai">OpenAI</string>
+    <string name="provider_preset_openrouter">OpenRouter</string>
+    <string name="provider_preset_perplexity">Perplexity</string>
+    <string name="provider_preset_summary">Wähle ein Preset, um Basis-URL und Modell automatisch zu füllen</string>
+    <string name="provider_preset_title">Anbieter-Preset</string>
     <string name="quote_of_the_day">Zitat des Tages</string>
     <string name="save">Speichern</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Suche"</string>

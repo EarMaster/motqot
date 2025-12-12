@@ -31,9 +31,15 @@
     <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"Partager avec"</string>
     <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
     <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="api_base_url_summary">Saisissez l\'URL de base de votre point de terminaison compatible OpenAI</string>
+    <string name="api_base_url_title">URL de base de l\'API</string>
     <string name="api_key_dialog_title">Entrer la clé API</string>
-    <string name="api_key_summary">Entrez votre clé API Perplexity pour générer des citations</string>
-    <string name="api_key_title">Clé API Perplexity</string>
+    <string name="api_key_set">La clé API est définie</string>
+    <string name="api_key_summary">Saisissez la clé API de votre fournisseur sélectionné</string>
+    <string name="api_key_title">Clé API</string>
+    <string name="api_model_summary">Saisissez le nom du modèle à utiliser pour générer les citations</string>
+    <string name="api_model_title">Modèle</string>
+    <string name="api_settings">Paramètres API</string>
     <string name="app_name">motqot</string>
     <string name="bottomsheet_action_collapse">Réduire la bottom sheet</string>
     <string name="bottomsheet_action_expand">Développer la bottom sheet</string>
@@ -52,11 +58,14 @@
     <string name="character_counter_overflowed_content_description">Nombre maximal de caractères dépassé : %1$d sur %2$d</string>
     <string name="clear_text_end_icon_content_description">Effacer le texte</string>
     <string msgid="6083905920877235314" name="copy">"Copier"</string>
-    <string name="error_api">Erreur de communication avec l\'API Perplexity. Veuillez réessayer plus
+    <string name="error_api">Erreur de communication avec l\'API configurée. Veuillez réessayer plus
 		tard.</string>
+    <string name="error_generating_quote">Échec de la génération de la citation. Veuillez réessayer
+		plus tard.</string>
     <string name="error_icon_content_description">Erreur</string>
+    <string name="error_incomplete_api_config">Veuillez compléter la configuration du fournisseur (clé API, URL et modèle) dans les paramètres</string>
     <string name="error_network">Erreur réseau. Veuillez vérifier votre connexion et réessayer.</string>
-    <string name="error_no_api_key">Veuillez entrer votre clé API Perplexity dans les paramètres</string>
+    <string name="error_no_api_key">Veuillez saisir votre clé API dans les paramètres</string>
     <string msgid="2427401033573778270" name="expand_button_title">"Paramètres avancés"</string>
     <string name="exposed_dropdown_menu_content_description">Afficher le menu déroulant</string>
     <string name="generate_new_quote">Générer une nouvelle citation</string>
@@ -139,9 +148,18 @@
     <string name="notification_time_title">Heure de notification</string>
     <string name="notification_title">Notifications quotidiennes</string>
     <string name="notification_title_text">Votre Motivation Quotidienne</string>
+    <string name="notifications">Notifications</string>
     <string name="open_settings">Ouvrir les paramètres</string>
     <string name="password_toggle_content_description">Afficher le mot de passe</string>
     <string msgid="6685851473431805375" name="preference_copied">"\"<ns1:g id="SUMMARY">%1$s</ns1:g>\" copié dans le presse-papier."</string>
+    <string name="provider_preset_anthropic">Anthropic</string>
+    <string name="provider_preset_custom">Personnalisé</string>
+    <string name="provider_preset_mistral">Mistral</string>
+    <string name="provider_preset_openai">OpenAI</string>
+    <string name="provider_preset_openrouter">OpenRouter</string>
+    <string name="provider_preset_perplexity">Perplexity</string>
+    <string name="provider_preset_summary">Choisissez un préréglage pour remplir automatiquement l\'URL de base et le modèle</string>
+    <string name="provider_preset_title">Préréglage fournisseur</string>
     <string name="quote_of_the_day">Citation du Jour</string>
     <string name="save">Enregistrer</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Rechercher"</string>

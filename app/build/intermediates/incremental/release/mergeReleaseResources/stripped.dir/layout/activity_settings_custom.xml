@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:fitsSystemWindows="true">
+
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:fitsSystemWindows="true">
+
+		<androidx.appcompat.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:title="@string/settings"
+			app:titleTextColor="@color/white" />
+
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<LinearLayout
+			android:id="@+id/settings_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="16dp">
+
+			<!-- Category: API Settings -->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/api_settings"
+				android:paddingTop="16dp"
+				android:paddingBottom="8dp"
+				style="@style/SafeTextView.Category" />
+
+			<!-- API Key Setting -->
+			<com.google.android.material.card.MaterialCardView
+				android:id="@+id/card_api_key"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				app:cardCornerRadius="4dp"
+				app:cardElevation="1dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/api_key_title"
+						style="@style/SafeTextView.Subtitle1" />
+
+					<TextView
+						android:id="@+id/api_key_summary"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/api_key_summary"
+						style="@style/SafeTextView.Caption" />
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+
+			<!-- Language Setting -->
+			<com.google.android.material.card.MaterialCardView
+				android:id="@+id/card_language"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				app:cardCornerRadius="4dp"
+				app:cardElevation="1dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/language_title"
+						style="@style/SafeTextView.Subtitle1" />
+
+					<TextView
+						android:id="@+id/language_summary"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/language_summary"
+						style="@style/SafeTextView.Caption" />
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+
+			<!-- Category: Notifications -->
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/notifications"
+				android:paddingTop="24dp"
+				android:paddingBottom="8dp"
+				style="@style/SafeTextView.Category" />
+
+			<!-- Enable Notifications Setting -->
+			<com.google.android.material.card.MaterialCardView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				app:cardCornerRadius="4dp"
+				app:cardElevation="1dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:padding="16dp">
+
+					<LinearLayout
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:orientation="vertical">
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/notification_title"
+							style="@style/SafeTextView.Subtitle1" />
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="@string/notification_summary"
+							style="@style/SafeTextView.Caption" />
+					</LinearLayout>
+
+					<com.google.android.material.switchmaterial.SwitchMaterial
+						android:id="@+id/switch_notifications"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:checked="true" />
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+
+			<!-- Notification Time Setting -->
+			<com.google.android.material.card.MaterialCardView
+				android:id="@+id/card_notification_time"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="4dp"
+				android:layout_marginBottom="4dp"
+				app:cardCornerRadius="4dp"
+				app:cardElevation="1dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:padding="16dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/notification_time_title"
+						style="@style/SafeTextView.Subtitle1" />
+
+					<TextView
+						android:id="@+id/notification_time_summary"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="@string/notification_time_summary"
+						style="@style/SafeTextView.Caption" />
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+		</LinearLayout>
+	</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
