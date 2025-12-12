@@ -34,12 +34,6 @@
 				android:value=".MainActivity" />
 		</activity>
 
-		<activity
-			android:name=".SettingsActivity"
-			android:label="@string/settings"
-			android:theme="@style/Theme.MotQot"
-			android:parentActivityName=".MainActivity" />
-
 		<!-- Disable automatic WorkManager initialization -->
 		<provider
 			android:name="androidx.startup.InitializationProvider"

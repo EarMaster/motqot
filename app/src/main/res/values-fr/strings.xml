@@ -17,9 +17,9 @@
 	<string name="api_key_dialog_title">Entrer la clé API</string>
 	<string name="api_key_set">La clé API est définie</string>
 	<string name="provider_preset_title">Préréglage fournisseur</string>
-	<string name="provider_preset_summary">Choisissez un préréglage pour remplir automatiquement l&#39;URL de base et le modèle</string>
-	<string name="api_base_url_title">URL de base de l&#39;API</string>
-	<string name="api_base_url_summary">Saisissez l&#39;URL de base de votre point de terminaison compatible OpenAI</string>
+	<string name="provider_preset_summary">Choisissez un préréglage pour remplir automatiquement l\'URL de base et le modèle</string>
+	<string name="api_base_url_title">URL de base de l\'API</string>
+	<string name="api_base_url_summary">Saisissez l\'URL de base de votre point de terminaison compatible OpenAI</string>
 	<string name="api_model_title">Modèle</string>
 	<string name="api_model_summary">Saisissez le nom du modèle à utiliser pour générer les citations</string>
 	<string name="provider_preset_openai">OpenAI</string>
