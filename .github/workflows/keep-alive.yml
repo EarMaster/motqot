@@ -8,6 +8,9 @@ on:
   # Manueller Trigger falls nötig
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Keep repository active
         run: |
