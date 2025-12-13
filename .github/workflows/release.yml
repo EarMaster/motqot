@@ -81,10 +81,9 @@ jobs:
           status: completed
           
       - name: Commit version bump
-        if: github.event_name == 'schedule'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add app/build.gradle
-          git commit -m "chore: bump version [skip ci]"
-          git push
+          git commit -m "chore: bump version [skip ci]" || true
+          git push || true
