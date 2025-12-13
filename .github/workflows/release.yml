@@ -43,17 +43,26 @@ jobs:
           # Erhöhe versionCode um 1
           NEW_VERSION_CODE=$((CURRENT_VERSION_CODE + 1))
           
-          # Erhöhe minor version (z.B. 1.0 -> 1.1)
+          # Erhöhe patch version (z.B. 1.1.0 -> 1.1.1)
           MAJOR=$(echo $CURRENT_VERSION_NAME | cut -d. -f1)
           MINOR=$(echo $CURRENT_VERSION_NAME | cut -d. -f2)
-          NEW_MINOR=$((MINOR + 1))
-          NEW_VERSION_NAME="${MAJOR}.${NEW_MINOR}"
+          PATCH=$(echo $CURRENT_VERSION_NAME | cut -d. -f3)
+          NEW_PATCH=$((PATCH + 1))
+          NEW_VERSION_NAME="${MAJOR}.${MINOR}.${NEW_PATCH}"
           
           # Aktualisiere build.gradle
           sed -i "s/versionCode $CURRENT_VERSION_CODE/versionCode $NEW_VERSION_CODE/" app/build.gradle
           sed -i "s/versionName \"$CURRENT_VERSION_NAME\"/versionName \"$NEW_VERSION_NAME\"/" app/build.gradle
           
           echo "Updated to versionCode: $NEW_VERSION_CODE, versionName: $NEW_VERSION_NAME"
+          
+      - name: Commit version bump
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add app/build.gradle
+          git commit -m "chore: bump version [skip ci]"
+          git push
           
       - name: Build Release AAB
         run: ./gradlew bundleRelease
@@ -79,11 +88,3 @@ jobs:
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
           track: production
           status: completed
-          
-      - name: Commit version bump
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add app/build.gradle
-          git commit -m "chore: bump version [skip ci]" || true
-          git push || true
