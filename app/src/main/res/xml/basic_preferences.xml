@@ -12,7 +12,7 @@
 			android:summary="@string/provider_preset_summary"
 			android:entries="@array/provider_preset_entries"
 			android:entryValues="@array/provider_preset_values"
-			android:defaultValue="perplexity" />
+			android:defaultValue="custom" />
 
 		<EditTextPreference
 			android:key="api_base_url"

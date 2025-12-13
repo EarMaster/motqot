@@ -22,14 +22,22 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     
     private val TAG = "SettingsFragment"
     private lateinit var sharedPreferences: SharedPreferences
+    private var suppressPresetListener = false
+    private var isApplyingPreset = false
     
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        preferenceManager.sharedPreferencesName = MotQotApplication.PREFS_NAME
+        preferenceManager.sharedPreferencesMode = Context.MODE_PRIVATE
+
         // Use the standard preferences XML file
         setPreferencesFromResource(R.xml.basic_preferences, rootKey)
         
         // Get shared preferences
-        sharedPreferences = requireActivity().getSharedPreferences(
-            MotQotApplication.PREFS_NAME, Context.MODE_PRIVATE)
+        sharedPreferences = preferenceManager.sharedPreferences
+            ?: requireContext().getSharedPreferences(
+                MotQotApplication.PREFS_NAME,
+                Context.MODE_PRIVATE
+            )
 
         ensureBaseConfigInitialized()
         
@@ -49,18 +57,19 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         val presetPref = findPreference<ListPreference>(MotQotApplication.KEY_PROVIDER_PRESET)
         val presetValue = sharedPreferences.getString(
             MotQotApplication.KEY_PROVIDER_PRESET,
-            ProviderPresets.PRESET_PERPLEXITY
-        ) ?: ProviderPresets.PRESET_PERPLEXITY
-        val presetEntry = presetPref?.entries?.getOrNull(
-            presetPref.findIndexOfValue(presetValue)
-        )
-        presetPref?.summary = presetEntry?.toString()
+            ProviderPresets.PRESET_CUSTOM
+        ) ?: ProviderPresets.PRESET_CUSTOM
+        val presetIndex = presetPref?.findIndexOfValue(presetValue) ?: -1
+        presetPref?.summary = when {
+            presetIndex >= 0 -> presetPref?.entries?.get(presetIndex)?.toString()
+            else -> getString(R.string.provider_preset_custom)
+        }
 
         // API Key
         val apiKeyPref = findPreference<EditTextPreference>(MotQotApplication.KEY_API_KEY)
         val apiKey = sharedPreferences.getString(MotQotApplication.KEY_API_KEY, "")
         if (!apiKey.isNullOrEmpty()) {
-            apiKeyPref?.summary = getString(R.string.api_key_set)
+            apiKeyPref?.summary = maskApiKey(apiKey)
         } else {
             apiKeyPref?.summary = getString(R.string.api_key_summary)
         }
@@ -180,13 +189,23 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         
         when (key) {
             MotQotApplication.KEY_API_KEY,
-            MotQotApplication.KEY_LANGUAGE,
+            MotQotApplication.KEY_LANGUAGE -> updateSummaries()
+
             MotQotApplication.KEY_API_BASE_URL,
-            MotQotApplication.KEY_API_MODEL -> updateSummaries()
+            MotQotApplication.KEY_API_MODEL -> {
+                if (!isApplyingPreset) {
+                    detectAndSelectPreset()
+                }
+                updateSummaries()
+            }
 
             MotQotApplication.KEY_PROVIDER_PRESET -> {
-                val presetValue = sharedPreferences.getString(key, ProviderPresets.PRESET_PERPLEXITY)
-                    ?: ProviderPresets.PRESET_PERPLEXITY
+                if (suppressPresetListener) {
+                    updateSummaries()
+                    return
+                }
+                val presetValue = sharedPreferences.getString(key, ProviderPresets.PRESET_CUSTOM)
+                    ?: ProviderPresets.PRESET_CUSTOM
                 applyPreset(presetValue)
                 updateSummaries()
             }
@@ -204,37 +223,83 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     
     override fun onResume() {
         super.onResume()
-        preferenceScreen.sharedPreferences?.registerOnSharedPreferenceChangeListener(this)
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this)
     }
     
     override fun onPause() {
         super.onPause()
-        preferenceScreen.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
+        sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 
     private fun ensureBaseConfigInitialized() {
         val baseUrl = sharedPreferences.getString(MotQotApplication.KEY_API_BASE_URL, null)
         val model = sharedPreferences.getString(MotQotApplication.KEY_API_MODEL, null)
-        if (!baseUrl.isNullOrBlank() && !model.isNullOrBlank()) {
-            return
-        }
+        val preset = sharedPreferences.getString(MotQotApplication.KEY_PROVIDER_PRESET, null)
 
-        val preset = sharedPreferences.getString(
-            MotQotApplication.KEY_PROVIDER_PRESET,
-            ProviderPresets.PRESET_PERPLEXITY
-        ) ?: ProviderPresets.PRESET_PERPLEXITY
-        applyPreset(preset)
+        if (baseUrl.isNullOrBlank() && model.isNullOrBlank() && preset == null) {
+            // This is a fresh install. Set the preset to custom and do nothing else.
+            // The defaultValue in XML already handles this, but we make it explicit here.
+            setProviderPresetValue(ProviderPresets.PRESET_CUSTOM)
+        }
     }
 
     private fun applyPreset(presetId: String) {
         if (presetId == ProviderPresets.PRESET_CUSTOM) {
+            // For custom, we don't autofill, just update the UI state
+            updateSummaries()
             return
         }
 
         val preset = ProviderPresets.getPreset(presetId) ?: return
+        isApplyingPreset = true
+
+        // Directly update the preference components
+        val baseUrlPref = findPreference<EditTextPreference>(MotQotApplication.KEY_API_BASE_URL)
+        val modelPref = findPreference<EditTextPreference>(MotQotApplication.KEY_API_MODEL)
+
+        baseUrlPref?.text = preset.baseUrl
+        modelPref?.text = preset.model
+
+        // Also commit to SharedPreferences to ensure persistence
         sharedPreferences.edit()
             .putString(MotQotApplication.KEY_API_BASE_URL, preset.baseUrl)
             .putString(MotQotApplication.KEY_API_MODEL, preset.model)
             .apply()
+
+        isApplyingPreset = false
+        // Update all summaries after applying the preset
+        updateSummaries()
+    }
+
+    private fun detectAndSelectPreset() {
+        val baseUrl = sharedPreferences.getString(MotQotApplication.KEY_API_BASE_URL, null)
+        val detectedPreset = ProviderPresets.detectPresetByBaseUrl(baseUrl)
+        val targetPreset = detectedPreset ?: ProviderPresets.PRESET_CUSTOM
+        val currentPreset = sharedPreferences.getString(
+            MotQotApplication.KEY_PROVIDER_PRESET,
+            ProviderPresets.PRESET_CUSTOM
+        ) ?: ProviderPresets.PRESET_CUSTOM
+
+        if (currentPreset != targetPreset) {
+            setProviderPresetValue(targetPreset)
+        }
+    }
+
+    private fun setProviderPresetValue(presetId: String) {
+        suppressPresetListener = true
+        sharedPreferences.edit()
+            .putString(MotQotApplication.KEY_PROVIDER_PRESET, presetId)
+            .apply()
+        suppressPresetListener = false
+    }
+
+    private fun maskApiKey(apiKey: String): String {
+        val trimmed = apiKey.trim()
+        if (trimmed.length <= 15) { // 12 + 3
+            return trimmed
+        }
+        val prefix = trimmed.take(12)
+        val suffix = trimmed.takeLast(3)
+        return "$prefix … $suffix"
     }
 }

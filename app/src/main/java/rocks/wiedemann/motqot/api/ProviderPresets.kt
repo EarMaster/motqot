@@ -1,5 +1,7 @@
 package rocks.wiedemann.motqot.api
 
+import java.util.Locale
+
 /**
  * Supported provider presets for quick configuration.
  */
@@ -32,7 +34,7 @@ object ProviderPresets {
         PRESET_ANTHROPIC to Preset(
             PRESET_ANTHROPIC,
             baseUrl = "https://api.anthropic.com/v1/",
-            model = "claude-3-5-sonnet-20241022"
+            model = "claude-3-5-sonnet"
         ),
         PRESET_MISTRAL to Preset(
             PRESET_MISTRAL,
@@ -47,4 +49,18 @@ object ProviderPresets {
     )
 
     fun getPreset(id: String?): Preset? = presets[id]
+
+    fun detectPresetByBaseUrl(baseUrl: String?): String? {
+        val normalizedInput = normalizeBaseUrl(baseUrl) ?: return null
+        return presets.values.firstOrNull { preset ->
+            normalizeBaseUrl(preset.baseUrl) == normalizedInput
+        }?.id
+    }
+
+    private fun normalizeBaseUrl(value: String?): String? {
+        if (value.isNullOrBlank()) return null
+        val trimmed = value.trim()
+        val sanitized = if (trimmed.endsWith("/")) trimmed else "$trimmed/"
+        return sanitized.lowercase(Locale.ROOT)
+    }
 }
