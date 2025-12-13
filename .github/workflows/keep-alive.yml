@@ -1,0 +1,29 @@
+name: Keep Repository Active
+
+on:
+  # Alle 50 Tage (um die 60-Tage-Grenze zu vermeiden)
+  schedule:
+    - cron: '0 0 */50 * *'
+  
+  # Manueller Trigger falls nötig
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Keep repository active
+        run: |
+          # Aktualisiere Timestamp-Datei
+          echo "Last activity: $(date)" > .github/keep-alive.txt
+          
+      - name: Commit and push
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .github/keep-alive.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: keep repository active [skip ci]" && git push)
