@@ -40,6 +40,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val lastQuote = repository.getLastQuote()
         _quote.value = lastQuote
     }
+
+    /**
+     * Load the quote for today, or generate a new one if it's a new day.
+     */
+    fun loadQuoteForTodayOrGenerateNew() {
+        if (repository.shouldGenerateNewQuote()) {
+            generateQuote()
+        } else {
+            loadLastQuote()
+        }
+    }
     
     /**
      * Generate a new quote
@@ -57,7 +68,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 
                 val result = repository.generateQuote(language)
                 if (result.isSuccess) {
-                    _quote.value = result.getOrNull()
+                    val newQuote = result.getOrNull()
+                    _quote.value = newQuote
+                    if (newQuote != null) {
+                        repository.saveQuote(newQuote)
+                    }
                 } else {
                     _error.value = result.exceptionOrNull()?.message
                         ?: getApplication<Application>().getString(R.string.error_generating_quote)

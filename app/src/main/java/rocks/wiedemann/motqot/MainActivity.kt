@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (viewModel.isApiConfigured()) {
-            viewModel.generateQuote()
+            viewModel.loadQuoteForTodayOrGenerateNew()
         } else {
             Toast.makeText(this, R.string.error_incomplete_api_config, Toast.LENGTH_LONG).show()
             // We'll let the user navigate to settings manually when needed
