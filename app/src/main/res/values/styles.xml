@@ -7,7 +7,6 @@
 		<item name="colorSecondary">@color/colorPrimary</item>
 		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
-		<item name="android:statusBarColor">@color/colorPrimary</item>
 		<item name="android:windowLightStatusBar">false</item>
 		<item name="android:fontFamily">@font/roboto</item>
 		<item name="android:windowBackground">@color/colorAccent</item>
@@ -26,7 +25,6 @@
 		<item name="colorSecondary">@color/colorPrimary</item>
 		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
-		<item name="android:statusBarColor">@color/colorPrimary</item>
 		<item name="android:fontFamily">@font/roboto</item>
 		<item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 		<item name="alertDialogTheme">@style/AlertDialogTheme</item>

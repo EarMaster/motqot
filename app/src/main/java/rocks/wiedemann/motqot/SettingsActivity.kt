@@ -1,5 +1,6 @@
 package rocks.wiedemann.motqot
 
+import androidx.activity.enableEdgeToEdge
 import android.app.TimePickerDialog
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -29,6 +30,7 @@ class SettingsActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
         
         // Set up the toolbar

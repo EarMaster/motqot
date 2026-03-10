@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -38,7 +39,8 @@ class MainActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+        enableEdgeToEdge()
+
         // Use view binding properly
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
