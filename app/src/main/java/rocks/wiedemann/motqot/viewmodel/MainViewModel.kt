@@ -2,43 +2,43 @@ package rocks.wiedemann.motqot.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import rocks.wiedemann.motqot.model.Quote
 import rocks.wiedemann.motqot.repository.QuoteRepository
 import rocks.wiedemann.motqot.R
-import java.text.SimpleDateFormat
-import java.util.Date
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 /**
  * ViewModel for the main activity
  */
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    
+
     private val repository = QuoteRepository(application)
-    
-    private val _quote = MutableLiveData<Quote?>()
-    val quote: LiveData<Quote?> = _quote
-    
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> = _isLoading
-    
-    private val _error = MutableLiveData<String?>()
-    val error: LiveData<String?> = _error
-    
+
+    private val _quote = MutableStateFlow<Quote?>(null)
+    val quote: StateFlow<Quote?> = _quote.asStateFlow()
+
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
+
+    private val _error = MutableStateFlow<String?>(null)
+    val error: StateFlow<String?> = _error.asStateFlow()
+
     init {
         loadLastQuote()
     }
-    
+
     /**
      * Load the last saved quote
      */
     fun loadLastQuote() {
-        val lastQuote = repository.getLastQuote()
-        _quote.value = lastQuote
+        _quote.value = repository.getLastQuote()
     }
 
     /**
@@ -51,21 +51,19 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             loadLastQuote()
         }
     }
-    
+
     /**
      * Generate a new quote
      */
     fun generateQuote() {
-        if (_isLoading.value == true) return
-        
+        if (_isLoading.value) return
+
         _isLoading.value = true
         _error.value = null
-        
+
         viewModelScope.launch {
             try {
-                // Get the preferred language from repository
                 val language = repository.getLanguagePreference()
-                
                 val result = repository.generateQuote(language)
                 if (result.isSuccess) {
                     val newQuote = result.getOrNull()
@@ -85,15 +83,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
-    
+
     /**
      * Format the date for display
      */
-    fun formatDateForDisplay(date: Date): String {
-        val sdf = SimpleDateFormat("MMMM d, yyyy", Locale.getDefault())
-        return sdf.format(date)
+    fun formatDateForDisplay(date: LocalDate): String {
+        val formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy", Locale.getDefault())
+        return date.format(formatter)
     }
-    
+
     /**
      * Check if the provider configuration is ready
      */

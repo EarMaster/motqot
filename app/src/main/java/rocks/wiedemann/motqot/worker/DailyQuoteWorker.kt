@@ -92,7 +92,7 @@ class DailyQuoteWorker(
         
         // Build the notification
         val notification = NotificationCompat.Builder(context, MotQotApplication.CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle(context.getString(R.string.notification_title_text))
             .setContentText(quoteText)
             .setStyle(NotificationCompat.BigTextStyle().bigText(quoteText))
