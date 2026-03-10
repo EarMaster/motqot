@@ -75,7 +75,8 @@ class OpenAiCompatibleClient {
 
         return "Generate a short, inspiring motivational quote for programmers or developers. " +
             "The quote should be in $languageName. " +
-            "Return ONLY the quote text without any additional information, attribution, or explanation."
+            "Your entire response must be exactly the quote text — no author attribution, no explanation, no introduction, no punctuation outside the quote itself. " +
+            "Do not wrap the quote in quotation marks."
     }
 
     private fun buildRequestJson(model: String, prompt: String): JSONObject {
@@ -109,7 +110,15 @@ class OpenAiCompatibleClient {
 
             val firstChoice = choices.getJSONObject(0)
             val message = firstChoice.getJSONObject("message")
-            val content = message.getString("content").trim()
+            val content = message.optString("content", "").trim()
+            if (content.isEmpty()) {
+                val reasoning = message.optString("reasoning", "").trim()
+                if (reasoning.isNotEmpty()) {
+                    Log.w(TAG, "Model returned empty content but non-empty reasoning — the model may not support structured output correctly")
+                    return Result.failure(Exception("The selected model returned no answer, only reasoning. Please choose a different model in the settings."))
+                }
+                return Result.failure(Exception("No content in response"))
+            }
             val cleanedContent = content.replace("^[\"']|[\"']$".toRegex(), "")
             Result.success(Quote(cleanedContent, language = language))
         } catch (e: Exception) {
