@@ -5,14 +5,11 @@
 		<item name="android:headerBackground">@color/colorPrimary</item>
 	</style>
 
-	<style name="Theme.MotQot.Settings" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+	<style name="Theme.MotQot.Settings" parent="Theme.Material3.DayNight.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnPrimary">@color/white</item>
 		<item name="colorSecondary">@color/colorPrimary</item>
-		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
-		<item name="android:statusBarColor">@color/colorPrimary</item>
 		<item name="android:fontFamily">@font/roboto</item>
 		<item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 		<item name="alertDialogTheme">@style/AlertDialogTheme</item>
@@ -35,16 +32,13 @@
 		<item name="android:layout_margin">8dp</item>
 	</style>
 
-	<style name="Theme.MotQot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+	<style name="Theme.MotQot" parent="Theme.Material3.DayNight.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnPrimary">@color/white</item>
 		<item name="colorSecondary">@color/colorPrimary</item>
-		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
 		<item name="colorSurface">@color/colorAccent</item>
 		<item name="colorOnSurface">@color/white</item>
-		<item name="android:statusBarColor">@color/colorPrimary</item>
 		<item name="android:fontFamily">@font/roboto</item>
 		<item name="android:windowBackground">@color/colorAccent</item>
 	</style>

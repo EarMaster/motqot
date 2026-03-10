@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="Theme.MotQot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+	<style name="Theme.MotQot" parent="Theme.Material3.DayNight.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnPrimary">@color/white</item>
 		<item name="colorSecondary">@color/colorPrimary</item>
-		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
-		<item name="android:windowLightStatusBar">false</item>
 		<item name="android:windowBackground">@color/colorAccent</item>
-		<item name="android:windowTranslucentStatus">false</item>
-		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 	</style>
 
 	<style name="SplashTheme" parent="Theme.MotQot">
 		<item name="android:windowBackground">@drawable/motqot</item>
 	</style>
 
-	<style name="Theme.MotQot.Settings" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+	<style name="Theme.MotQot.Settings" parent="Theme.Material3.DayNight.NoActionBar">
 		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnPrimary">@color/white</item>
 		<item name="colorSecondary">@color/colorPrimary</item>
-		<item name="colorSecondaryVariant">@color/colorPrimaryDark</item>
 		<item name="colorOnSecondary">@color/white</item>
 		<item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
 		<item name="alertDialogTheme">@style/AlertDialogTheme</item>
@@ -59,7 +52,7 @@
 		<item name="android:layout_margin">8dp</item>
 	</style>
 
-	<style name="AppButtonStyle" parent="Widget.MaterialComponents.Button">
+	<style name="AppButtonStyle" parent="Widget.Material3.Button">
 		<item name="android:textAllCaps">false</item>
 		<item name="android:paddingStart">16dp</item>
 		<item name="android:paddingEnd">16dp</item>
@@ -67,28 +60,28 @@
 		<item name="android:paddingBottom">8dp</item>
 	</style>
 
-	<style name="AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+	<style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
 		<item name="android:background">@color/colorPrimary</item>
 		<item name="android:fitsSystemWindows">true</item>
 		<item name="android:paddingTop">0dp</item>
 	</style>
 
-	<style name="PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+	<style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-	<style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+	<style name="AlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
 		<item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
 		<item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
 	</style>
 
-	<style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+	<style name="PositiveButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
 		<item name="android:textColor">@color/colorPrimary</item>
 	</style>
 
-	<style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+	<style name="NegativeButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
 		<item name="android:textColor">@color/colorPrimary</item>
 	</style>
 
-	<style name="TimePickerDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+	<style name="TimePickerDialogTheme" parent="ThemeOverlay.Material3.Dialog">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorAccent">@color/colorPrimary</item>
 		<item name="android:timePickerStyle">@style/TimePickerStyle</item>
