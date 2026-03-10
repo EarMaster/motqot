@@ -125,4 +125,8 @@ class OpenAiCompatibleClient {
             Result.failure(e)
         }
     }
+
+    companion object {
+        private const val TAG = "OpenAiCompatibleClient"
+    }
 }
