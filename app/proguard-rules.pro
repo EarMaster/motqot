@@ -24,6 +24,11 @@
 -keepattributes Signature
 -keepattributes Exceptions
 
+# Keep Retrofit service interface methods
+-keep,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
 # OkHttp rules
 -dontwarn okhttp3.**
 -dontwarn okio.**
@@ -34,3 +39,12 @@
 -keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.** { *; }
 -keep class rocks.wiedemann.motqot.model.** { *; }
+
+# WorkManager - keep worker constructors so WorkManager can instantiate them
+-keep class * extends androidx.work.ListenableWorker {
+    public <init>(android.content.Context, androidx.work.WorkerParameters);
+}
+
+# Preserve stack traces in crashes
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
