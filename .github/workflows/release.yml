@@ -3,11 +3,22 @@ name: Build and Deploy to Play Store
 on:
   # Manueller Trigger
   workflow_dispatch:
-  
+    inputs:
+      track:
+        description: 'Play Store track to release to'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - beta
+          - alpha
+          - internal
+
   # Zeitgesteuert: Jeden 1. Januar und 1. Juli um Mitternacht UTC
   schedule:
     - cron: '0 0 1 1,7 *'
-  
+
   # Optional: Bei Tags
   push:
     tags:
@@ -91,5 +102,5 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_STORE_SERVICE_ACCOUNT_JSON }}
           packageName: rocks.wiedemann.motqot
           releaseFiles: app/build/outputs/bundle/release/app-release.aab
-          track: production
+          track: ${{ inputs.track || 'production' }}
           status: completed
